@@ -9,7 +9,45 @@ body {
 color: red;	
 }
 
-h1 {
+h2 {
+	font-family: Verdana;
+	color:#00B9FF;
+	text-align: center;
+	font-size: 30px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	background-color: blueviolet;
+}
+
+.Titulo {
+	color: black;
+	font-size: 25px;	
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Marca {
+	color: gray;
+	font-size: 15px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.Precio {
+	color: blue;
+	font-size: 25px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;	
+}
+img{
+	width: 200px;
+}
+.Producto:hover{
+	border: black;
+	border-bottom-color: black
+}
+.Producto{
+	display: block;
+	float: left;
+	align-items: center;
+}
+.ProductosDestacados{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
