@@ -8,17 +8,16 @@
 	<title>Jugueteria Alex</title>
 
 	<script type="text/javascript" src="Index/Index.js"></script>	
-
-	<link rel="stylesheet" type="text/css" href="Index/Index.css">
+	<link rel="stylesheet" type="text/css" href="Normalize.css">
+	<link rel="stylesheet" type="text/css" href="Index/Index.css">	
 </head>
-<body>			
-		<div id="Encabezado">
-			<header>			
-				<div role="img" class="logo">				
-					<img src="img/PuertaLocal.png" height="200" alt="Puerta negocio Alex"> 
-				</div>
-				<input id="search" name="search" class="search" type="search" placeholder="¿Qué estas buscando?" value="">
-				<nav role="navigation">  <!--los botones del menu ej contacto catalogo inicio-->
+<body>
+		<header class="encabezado">						
+			<img class="logo"src="img/Logo Alex.png" height="200" alt="Puerta negocio Alex"> 			
+			<input id="search" name="search" class="search" type="search" placeholder="¿Qué estas buscando?" value="">
+			<span class="Telefono">(011) 4951-9648</span>
+			<div class="navegadorEncabezado">
+				<nav class="navegador" role="navigation" >  <!--los botones del menu ej contacto catalogo inicio-->
 					<ul>
 						<li><a href="Inicio.html">inicio</a></li>
 						<li><a href="#">Juguetes</a></li>
@@ -31,131 +30,129 @@
 						<li><a href="Contacto.html">Contacto</a></li>
 					</ul>
 				</nav>
+			</div>
+			<div class="Login">
 
-				<div class="Login">
-	
-				</div>	
-			</header>
-			<main role="main">
-				<section id="Destacados">
-					<h2>Juguetes Destacados</h2> <!--Fotos para los juguetes destacados-->
-					<div class="ProductosDestacados">
-						<div class="Producto">
-							<div class="FotoProducto">
-								<img src="img/231.jpg" alt="Camion Volcador"></a>
+			</div>	
+		</header>		
+		<main role="main" style="clear:left;">
+			<img class="banner" src="img/banner1.jpg">
+			<section id="Destacados">
+				<h2>Juguetes Destacados</h2> <!--Fotos para los juguetes destacados-->
+				<div class="ProductosDestacados">
+					<div class="Producto">
+						<div class="DivFoto" >
+							<img class="FotoProducto"src="img/231.jpg" alt="Camion Volcador"></a>
+						</div>
+						<div class="DatosProductos">
+							<div class="Titulo">
+								Camion	
 							</div>
-							<div class="DatosProductos">
-								<div class="Titulo">
-									Camion	
-								</div>
-								<div class="Marca">
-									Duravit
-								</div>									
-								<div class="Precio">		
-									$750
-								</div>
+							<div class="Marca">
+								Duravit
+							</div>									
+							<div class="Precio">		
+								$750
 							</div>
 						</div>
-						<div class="Producto">
-							<div class="FotoProducto">
-									<img src="img/masa.jpg"  alt="Juego de masa">
-							</div>
-							<div class="DatosProductos">
-								<div class="Titulo">
-									Camion	
-								</div>
-								<div class="Marca">
-									Duravit
-								</div>									
-								<div class="Precio">		
-									$750
-								</div>
-							</div>
-						</div>
-						<div class="Producto">
-							<div class="FotoProducto">
-									<img src="img/Cocina.jpg"  alt="Juego de Cocina">
-							</div>
-							<div class="DatosProductos">
-								<div class="Titulo">
-									Camion	
-								</div>
-								<div class="Marca">
-									Duravit
-								</div>									
-								<div class="Precio">		
-									$750
-								</div>
-							</div>
-						</div>
-						<div class="Producto">
-							<div class="FotoProducto">
-									<img src="img/CamionYAutos.jpg" alt="Camion Y Autos">
-							</div>
-							<div class="DatosProductos">
-								<div class="Titulo">
-									Camion	
-								</div>
-								<div class="Marca">
-									Duravit
-								</div>									
-								<div class="Precio">		
-									$750
-								</div>
-							</div>
-						</div>
-						<div class="Producto">
-							<div class="FotoProducto">
-									<img src="img/710.jpg"  alt="3 autitos"> <br>
-							</div>
-							<div class="DatosProductos">
-								<div class="Titulo">
-									Camion	
-								</div>
-								<div class="Marca">
-									Duravit
-								</div>									
-								<div class="Precio">		
-									$750
-								</div>
-							</div>
-						</div>
-						<div class="Producto">
-							<div class="FotoProducto">
-									<img src="img/229.jpg" alt="Camion con cuatriciclos">
-							</div>
-							<div class="DatosProductos">
-								<div class="Titulo">
-									Camion	
-								</div>
-								<div class="Marca">
-									Duravit
-								</div>									
-								<div class="Precio">		
-									$750
-								</div>
-							</div>
-						</div>	
 					</div>
-				</section>
-			</main>	
-			<aside role="complementary">
-				marcas con las que trabajamos <br>
-				telefono <br>
-				direccion <br>
-			</aside>	
+					<div class="Producto">
+						<div class="DivFoto">
+								<img class="FotoProducto"  src="img/masa.jpg"  alt="Juego de masa">
+						</div>
+						<div class="DatosProductos">
+							<div class="Titulo">
+								Camion	
+							</div>
+							<div class="Marca">
+								Duravit
+							</div>									
+							<div class="Precio">		
+								$750
+							</div>
+						</div>
+					</div>
+					<div class="Producto">
+						<div class="DivFoto">
+								<img class="FotoProducto" src="img/Cocina.jpg"  alt="Juego de Cocina">
+						</div>
+						<div class="DatosProductos" >
+							<div class="Titulo">
+								Camion	
+							</div>
+							<div class="Marca">
+								Duravit
+							</div>									
+							<div class="Precio">		
+								$750
+							</div>
+						</div>
+					</div>
+					<div class="Producto">
+						<div class="DivFoto">
+								<img class="FotoProducto"  src="img/CamionYAutos.jpg" alt="Camion Y Autos">
+						</div>
+						<div class="DatosProductos">
+							<div class="Titulo">
+								Camion	
+							</div>
+							<div class="Marca">
+								Duravit
+							</div>									
+							<div class="Precio">		
+								$750
+							</div>
+						</div>
+					</div>
+					<div class="Producto">
+						<div  class="DivFoto">
+								<img class="FotoProducto" src="img/710.jpg"  alt="3 autitos"> <br>
+						</div>
+						<div class="DatosProductos">
+							<div class="Titulo">
+								Camion	
+							</div>
+							<div class="Marca">
+								Duravit
+							</div>									
+							<div class="Precio">		
+								$750
+							</div>
+						</div>
+					</div>
+					<div class="Producto">
+						<div class="DivFoto">
+								<img class="FotoProducto" src="img/229.jpg" alt="Camion con cuatriciclos">
+						</div>
+						<div class="DatosProductos">
+							<div class="Titulo">
+								Camion	
+							</div>
+							<div class="Marca">
+								Duravit
+							</div>									
+							<div class="Precio">		
+								$750
+							</div>
+						</div>
+					</div>	
+				</div>
+			</section>
+		</main>	
+		
+		<aside role="complementary" class="Aside">
+			marcas con las que trabajamos <br>
+			telefono <br>
+			direccion <br>
+		</aside>	
 			<footer role="contentinfo">
-				Ayuda - © 2018 Alex Todos los derechos reservados - alex 2018 - telefono - direccion - pagina de facebook - contacto - envio 
+			Ayuda - © 2018 Alex Todos los derechos reservados - alex 2018 - telefono - direccion - pagina de facebook - contacto - envio 
 			</footer>		
-		</div>
+			<h1 class="texto">Alex</h1>
+			<br>
+			<h2>Bienvenido a la jugueteria mayorista Alex &nbsp; &nbsp; &nbsp; Anush</h2>
+			<h2> <b>Destacados</b> <i>Novedades</i></h2>
+			<p>este color es <span style="color:green;">Verde</span></p>
 	
-	
-	<h1 class="texto">Alex</h1>
-	<br>
-	<h2>Bienvenido a la jugueteria mayorista Alex &nbsp; &nbsp; &nbsp; Anush</h2>
-	<h2> <b>Destacados</b> <i>Novedades</i></h2>
-	<p>este color es <span style="color:green;">Verde</span></p>
-
-	<div></div>
-</body>
+	</body>
 </html>
