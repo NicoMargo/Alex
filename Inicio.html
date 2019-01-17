@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
@@ -10,17 +10,23 @@
 	<script type="text/javascript" src="Index/Index.js"></script>	
 	<link rel="stylesheet" type="text/css" href="Normalize.css">
 	<link rel="stylesheet" type="text/css" href="Index/Index.css">	
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="bootstrap/bootstrap css/bootstrap.css">
+
 </head>
 <body>
-		<header class="encabezado">	
-				
+		<!--HEADER Y NAVBAR VERSION DE NICO-->
+
+		<!--<header class="encabezado">	
+			
 			<div class="encabezadosup">
 				<div style="text-align:left;float: left; "><img class="logo"src="img/Logo Alex.png" alt="Puerta negocio Alex"></div> 				
-				<div style="text-align:center; float: left;"><input class="search"name="search" type="search" placeholder="¿Qué estas buscando?"value=""></div>
+				<div style="text-align:center;"><input class="search"name="search" type="search" placeholder="¿Qué estas buscando?"value=""></div>
 				<div style="text-align:right; "><span class="Telefono">(011) 4951-9648</span></div>
 			</div>	
 			<div class="navegadorEncabezado">
-				<nav class="navegador" role="navigation" >  <!--los botones del menu ej contacto catalogo inicio-->
+				<nav class="navegador" role="navigation" >  (comentario)los botones del menu ej contacto catalogo inicio(comentario)
 					<ul>
 						<li><a href="Inicio.html">inicio</a></li>
 						<li><a href="#">Juguetes</a></li>
@@ -36,9 +42,95 @@
 			<div class="Login">
 
 			</div>	
-		</header>		
-		<main role="main" style="clear:left;">
+		</header>-->
+		
+		<!--HEADER Y NAVBAR VERSION DE MARTIN-->
+
+		<!--Header Dinamico-->
+		<nav class="navbar navbar-dark encabezado navbar-expand-sm sticky-top">
+		  
+		  
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+				  <div class="navbar-nav ml-auto mr-auto text-center">
+						<img src="img/Logo Alex.png" width="100" height="40" class="d-inline-block align-top mr-4" alt="Logo Alex">
+
+						<div><input class="search ml-5" name="search" type="search" placeholder="¿Qué estas buscando?"value=""></div>
+				  </div>
+		  
+				  <div class="d-flex flex-row justify-content-center">
+						<div class="Telefono mr-4">(011) 4951-9648</div>
+				  </div>
+		  
+				</div>
+			 </nav>
+
+		 <!--Navbar Estatico-->
+		 <nav class="navbar navbar-dark navegadorEncabezado navbar-expand-sm">
+		  
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+				  <div class="navbar-nav ml-auto mr-auto text-center">
+					  <a class="nav-item nav-link active ml-5 pl-5" href="#">Inicio</a>
+					  <a class="nav-item nav-link" href="#">Juguetes</a>
+					  <a class="nav-item nav-link" href="#">Nenes</a>
+					  <a class="nav-item nav-link" href="#">Nenas</a>
+					  <a class="nav-item nav-link" href="#">Edad</a>
+					  <a class="nav-item nav-link" href="#">Destacados</a>
+					  <a class="nav-item nav-link" href="#">Contacto</a>
+
+
+
+				  </div>
+		  
+				</div>
+			 </nav>
+
+		<!--Imagen de Nico
+			<main role="main" style="clear:left;">
 			<img class="banner" src="img/banner1.jpg">
+			-->
+
+		
+		<!--Carrusel--> 
+		 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+    
+				<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				</ol>
+
+				<div class="carousel-inner">
+					<div class="carousel-item active" style="height: 100vh">
+						<img class="d-block w-100" src="img/banner1.jpg" alt="First slide">
+							<div class="carousel-caption d-none d-md-block">
+							<p>Amplia variedad de juguetes</p>
+							</div>
+					</div>
+					<div class="carousel-item" style="height: 100vh">
+						<img class="d-block w-100" src="img/banner2.JPG" alt="Second slide">
+							<div class="carousel-caption d-none d-md-block">
+							<p>Nenas, nenes, bebes</p>
+							</div>
+				</div>
+					<div class="carousel-item" style="height: 100vh">
+						<img class="d-block w-100" src="img/banner3.JPG" alt="Third slide">
+						<div class="carousel-caption d-none d-md-block">
+						<p>Promociones increibles xd</p>
+						</div>
+					</div>
+				</div>
+		
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Anterior</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Después</span>
+				</a>    
+			</div>
+
 			<section id="Destacados">
 				<h2>Juguetes Destacados</h2> <!--Fotos para los juguetes destacados-->
 				<div class="ProductosDestacados">
@@ -142,7 +234,10 @@
 			</section>
 		</main>	
 		
+		
 		<aside role="complementary" class="Aside">
+
+			<!--Footer Nico xD 
 			marcas con las que trabajamos <br>
 			telefono <br>
 			direccion <br>
@@ -154,7 +249,40 @@
 			<br>
 			<h2>Bienvenido a la jugueteria mayorista Alex &nbsp; &nbsp; &nbsp; Anush</h2>
 			<h2> <b>Destacados</b> <i>Novedades</i></h2>
-			<p>este color es <span style="color:green;">Verde</span></p>
+			<p>este color es <span style="color:green;">Verde</span></p> -->
+
+			  <!--Footer Jumbotron-->
+
+  <div class="jumbotron mt-12 bg-primary bg-primary text-white rounded-0">
+		<div class="container">
+
+			<div>
+			<p class="lead">Marcas con las que trabajamos:</p> 
+			<img src="img/Marca Rondi.png" width="100px" class="mr-2" alt="Rondi">
+			<img src="img/Marca HotWheels.png" width="100px" class="mr-2" alt="HotWheels">
+			<img src="img/Marca Barbie.png" width="100px" class="mr-2" alt="Barbie">
+			<img src="img/Marca Paladins.png" width="100px" class="mr-2" alt="Paladins">
+			</div>
+
+		  <hr class="my-4">
+
+		  <div class="d-flex justify-content-between align-items-center">
+			<p>© 2018 Alex Todos los derechos reservados</p>
+			<p>Azcuenaga 1014</p>
+			<p>(011) 4951-9648</p>
+			<a  href="https://www.youtube.com/channel/UC4lE40XK1bDL_VVgMuU-seA"><img src="img/youtube.svg" height="40" width="40" alt="Youtube"></a>
+			<a  href="https://www.facebook.com/martincho.ugartene"><img src="img/facebook.svg" height="40" width="40" alt="Facebook"></a>
+  
+		  </div>
+		</div>
+	  </div>
+
+
 	
-	</body>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="bootstrap/bootstrap js/bootstrap.js"></script>
+
+</body>
 </html>
