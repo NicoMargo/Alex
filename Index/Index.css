@@ -1,10 +1,4 @@
-h2 {
-	font-family: Verdana;
-	color:black;
-	text-align: center;
-	font-size: 30px;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+
 body{
 	clear:left;
 	background-color:#E2F8FF;
@@ -19,7 +13,6 @@ body{
 	font-size: 25px;	
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 .Marca {
 	color: gray;
 	font-size: 15px;
@@ -55,6 +48,14 @@ body{
 	vertical-align: center;
 	align-items: center;
 }
+.PalabraDestacados{
+	color:rgb(0, 132, 255);	
+	font-size: 30px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-align: center;
+	border: rgb(0, 132, 255) solid 2px;
+	text-shadow: 0px 0.8px 0 rgb(0, 132, 255);
+}
 .ProductosDestacados{	
 	margin: auto;
 	width: 1100px;
@@ -69,15 +70,22 @@ body{
 	clear:left;
 	text-align:center;
 }
-
+.palabraGenero{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 45px;
+	font-weight:bold;
+	padding-bottom: 20px;
+	border-bottom: black solid 1px;
+}
 .CartasGenero{
 	margin-top: 150px;
-	background-color: #F5F5F5;
+	margin-bottom: 100px;
+	background-color: #FAFAFA;
 	border: black solid 0,9px;
-	height: 400px;
-	width: 300px;
+	height: 650px;
 	display:inline-block;
-	margin-right: 30px;	
+	margin-right: 43px;
+	width: 350px;
 }
 
 .CartasGenero:hover {
@@ -88,16 +96,18 @@ body{
 	border: none;
 }
 .Nenes:hover {
-	background-color: #FE6868;
+	background-color: #FF8686;
 }
 .Bebes:hover {
-	background-color: lightskyblue;
+	background-color: #BFEAFF;
 }
 
 .Nenas:hover {
 	background-color: pink;
 }
 .fotosGenero{
+	
+	margin-top: 50px;
 	width: 278px;
 }
 /*Encabezado*/
@@ -131,7 +141,5 @@ body{
 	border-radius: 10px;
 	width: 250px;
 	height: 30px;
-}
- .encabezadosup *{
-	
+	text-align: center;
 }

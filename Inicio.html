@@ -10,44 +10,13 @@
 	<script type="text/javascript" src="Index/Index.js"></script>	
 	<link rel="stylesheet" type="text/css" href="Normalize.css">
 	<link rel="stylesheet" type="text/css" href="Index/Index.css">	
-	
-	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="bootstrap/bootstrap css/bootstrap.css">
 
 </head>
 <body>
-		<!--HEADER Y NAVBAR VERSION DE NICO-->
-
-		<!--<header class="encabezado">	
-			
-			<div class="encabezadosup">
-				<div style="text-align:left;float: left; "><img class="logo"src="img/Logo Alex.png" alt="Puerta negocio Alex"></div> 				
-				<div style="text-align:center;"><input class="search"name="search" type="search" placeholder="¿Qué estas buscando?"value=""></div>
-				<div style="text-align:right; "><span class="Telefono">(011) 4951-9648</span></div>
-			</div>	
-			<div class="navegadorEncabezado">
-				<nav class="navegador" role="navigation" >  (comentario)los botones del menu ej contacto catalogo inicio(comentario)
-					<ul>
-						<li><a href="Inicio.html">inicio</a></li>
-						<li><a href="#">Juguetes</a></li>
-							<ul>
-								<li> <a href="#">Nenes</a></li>
-								<li> <a href="#">Nenas</a></li>
-							</ul>
-						<li><a href="#Destacados">Destacados</a></li>
-						<li><a href="Contacto.html">Contacto</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="Login">
-
-			</div>	
-		</header>-->
-		
-		<!--HEADER Y NAVBAR VERSION DE MARTIN-->
-
 		<!--Header Dinamico-->
-		<nav class="navbar navbar-dark encabezado navbar-expand-sm sticky-top">	  
+	<div class="sticky-top">
+		<nav class="navbar navbar-dark encabezado navbar-expand-sm ">	  
 		  
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 				  <div class="navbar-nav ml-auto mr-auto text-center">
@@ -62,9 +31,9 @@
 		  
 				</div>
 			 </nav>
-
+			 
 		 <!--Navbar Estatico-->
-		 <nav class="navbar navbar-dark navegadorEncabezado navbar-expand-sm">
+		 <nav class="navbar navbar-dark navegadorEncabezado navbar-expand-sm ">
 		  
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 				  <div class="navbar-nav ml-auto mr-auto text-center">
@@ -73,10 +42,14 @@
 					  <a class="nav-item nav-link" href="#">Nenes</a>
 					  <a class="nav-item nav-link" href="#">Nenas</a>
 					  <a class="nav-item nav-link" href="#Destacados">Destacados</a>
+					  <a class="nav-item nav-link" href="#">Marcas</a>
 					  <a class="nav-item nav-link" href="Contacto.html">Contacto</a>
-				  </div>		  
-				</div>
-			 </nav>
+				</div>		  
+			</div>
+		</nav>
+	</div>
+
+
 		<main role="main">
 
 		<!--Carrusel--> 
@@ -89,23 +62,20 @@
 				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 				</ol>
 
-				<div class="carousel-inner">
-					<div class="carousel-item active" style="height: 100vh">
+				<div class="carousel-inner" style="height: 100%">
+					<div class="carousel-item active" style="height: 100%">
 						<img class="d-block w-100" src="img/banner1.jpg" alt="First slide">
 							<div class="carousel-caption d-none d-md-block">
-							<p>Amplia variedad de juguetes</p>
 							</div>
 					</div>
-					<div class="carousel-item" style="height: 100vh">
-						<img class="d-block w-100" src="img/banner2.JPG" alt="Second slide">
-							<div class="carousel-caption d-none d-md-block">
-							<p>Nenas, nenes, bebes</p>
-							</div>
+				<div class="carousel-item" style="height: 100%">
+					<img class="d-block w-100" src="img/banner2.JPG" alt="Second slide">
+						<div class="carousel-caption d-none d-md-block">
+					</div>
 				</div>
-					<div class="carousel-item" style="height: 100vh">
+					<div class="carousel-item" style="height: 100%">
 						<img class="d-block w-100" src="img/banner3.JPG" alt="Third slide">
 						<div class="carousel-caption d-none d-md-block">
-						<p>Promociones increibles xd</p>
 						</div>
 					</div>
 				</div>
@@ -121,9 +91,11 @@
 			</div>
 
 			<section id="Destacados">
-				<h2>Juguetes Destacados</h2> <!--Fotos para los juguetes destacados-->
+				<!--Fotos para los juguetes destacados-->
+				<div style="width: 100%; height: 130px;"></div>
+				<p class="PalabraDestacados" >Juguetes Destacados</p>
 				<div class="ProductosDestacados">
-					<div class="Producto">
+					<div class="Producto">							 
 						<div class="DivFoto" >
 							<img class="FotoProducto"src="img/231.jpg" alt="Camion Volcador"></a>
 						</div>
@@ -219,6 +191,38 @@
 							</div>
 						</div>
 					</div>	
+					<div class="Producto">
+							<div class="DivFoto">
+									<img class="FotoProducto" src="img/229.jpg" alt="Camion con cuatriciclos">
+							</div>
+							<div class="DatosProductos">
+								<div class="Titulo">
+									Camion	
+								</div>
+								<div class="Marca">
+									Duravit
+								</div>									
+								<div class="Precio">		
+									$750
+								</div>
+							</div>
+						</div>	
+						<div class="Producto">
+								<div class="DivFoto">
+										<img class="FotoProducto" src="img/229.jpg" alt="Camion con cuatriciclos">
+								</div>
+								<div class="DatosProductos">
+									<div class="Titulo">
+										Camion	
+									</div>
+									<div class="Marca">
+										Duravit
+									</div>									
+									<div class="Precio">		
+										$750
+									</div>
+								</div>
+							</div>	
 				</div>
 			</section>
 		</main>	
@@ -227,17 +231,18 @@
 		<aside role="complementary" class="Aside">
 			<div>
 				<div class="Nenes CartasGenero">
-					<span>Nenes</span> <br>
-					<img class="fotosGenero" src="img/foto nenes.jpg" alt="">
+					<span class="palabraGenero">Nenes</span> <br>
+					<img class="fotosGenero" src="img/Mario.png" alt="Mario Bros">
 				</div>
 				<div class="Bebes CartasGenero">
-					<span>Bebes</span><br>
-					<img class="fotosGenero" src="img/foto bebe.jpg" alt="">
+					<span class="palabraGenero">Bebes</span><br>
+					<img class="fotosGenero" src="img/Toad.png" alt="Toad">
 				</div>
 				<div class="Nenas CartasGenero">
-					<span>Nenas</span><br>
-					<img class="fotosGenero" src="img/foto nenas.webp" alt="">
+					<span class="palabraGenero">Nenas</span><br>
+					<img class="fotosGenero" src="img/Peach.png" alt="Princesa Peach">
 				</div>
+				
 			</div>			
 		</aside>			
 
@@ -247,16 +252,22 @@
 			<div>
 			<p class="lead">Marcas con las que trabajamos:</p> 
 			<img src="img/Marca Rondi.png" width="100px" class="mr-2" alt="Rondi">
+			<img src="img/Marca Ruibal.jpg" width="85" class="mr-2" alt="Ruibal">
 			<img src="img/Marca HotWheels.png" width="100px" class="mr-2" alt="HotWheels">
 			<img src="img/Marca Barbie.png" width="100px" class="mr-2" alt="Barbie">
-			<img src="img/Marca Paladins.png" width="100px" class="mr-2" alt="Paladins">
+			<img src="img/Welly_b.png" width="100px" class="mr-2" alt="Welly">			
+			<img src="img/Marca Mattel.webp" width="85" class="mr-2" alt="Mattel">
+			<img src="img/Marca Hasbro.webp"  width="85px" class="mr-2" alt="Hasbro">
+			<img src="img/Marca Kinsmart.png" width="100px" class="mr-2" alt="Kinsmart">
+			<img src="img/Marca Playmobil.png" width="100px" class="mr-2" alt="Playmobil">
+			<img src="img/Marca Juliana.png" width="100px" class="mr-2" alt="Juliana">
 			</div>
 
 		  <hr class="my-4">
 
 		  <div class="d-flex justify-content-between align-items-center">
 			<p>© 2018 Alex Todos los derechos reservados</p>
-			<p>Azcuenaga 1014</p>
+			<p>Sarmiento 2401</p>
 			<p>(011) 4951-9648</p>
 			<a  href="https://www.facebook.com/jugueteriaalexx/"><img src="img/facebook.svg" height="40" width="40" alt="Facebook"></a>  
 		  </div>
