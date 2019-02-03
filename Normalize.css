@@ -120,3 +120,12 @@
   [hidden] {
     display: none;
   }
+
+@font-face {
+    font-family: 'k26toyblocks123regular';
+    src: url('k26toyblocks123.woff2') format('woff2'),
+         url('k26toyblocks123.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

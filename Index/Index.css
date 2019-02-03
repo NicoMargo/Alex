@@ -1,145 +1,284 @@
+/*Pc-ordenador Laptops*/
 
-body{
-	clear:left;
-	background-color:#E2F8FF;
-}
-.banner{
-	width: 100%;
-	height: auto;
-}
-
-.Titulo {
-	color: black;
-	font-size: 25px;	
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.Marca {
-	color: gray;
-	font-size: 15px;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.Precio {
-	color: blue;
-	font-size: 25px;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;	
-	margin-top: 10px;
-}
-.Producto{
-	float: left;	
-	margin-top: 50px;
-    margin-right: 35px;
-	padding: 15px;
-	background-color: white;
-}	
-.Producto:hover{
- 	-webkit-transform: scale(0.8);
-  	-ms-transform: scale(0.8);
-  	transform: scale(1.07);
-	box-shadow: 0.1px 10px 18px #888888;
-}
-.FotoProducto {
-	width: 200px;
-	align-items: center;
-	vertical-align: center;
-}
-.DivFoto {
-	width: 200px;
-	height: 200px;
-	vertical-align: center;
-	align-items: center;
-}
-.PalabraDestacados{
-	color:rgb(0, 132, 255);	
-	font-size: 30px;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	text-align: center;
-	border: rgb(0, 132, 255) solid 2px;
-	text-shadow: 0px 0.8px 0 rgb(0, 132, 255);
-}
-.ProductosDestacados{	
-	margin: auto;
-	width: 1100px;
-}
-.DatosProductos{
-	border-top: blue solid 1px;
-	padding-top: 20px;
-	margin-top: 20px;
-}
-/*Aside cartas genero*/
-.Aside{
-	clear:left;
-	text-align:center;
-}
-.palabraGenero{
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 45px;
-	font-weight:bold;
-	padding-bottom: 20px;
-	border-bottom: black solid 1px;
-}
-.CartasGenero{
-	margin-top: 150px;
-	margin-bottom: 100px;
-	background-color: #FAFAFA;
-	border: black solid 0,9px;
-	height: 650px;
-	display:inline-block;
-	margin-right: 43px;
-	width: 350px;
-}
-
-.CartasGenero:hover {
-	-webkit-transform: scale(0.8);
-  	-ms-transform: scale(0.8);
-  	transform: scale(1.07);
-	box-shadow: 0.1px 10px 18px #888888;
-	border: none;
-}
-.Nenes:hover {
-	background-color: #FF8686;
-}
-.Bebes:hover {
-	background-color: #BFEAFF;
-}
-
-.Nenas:hover {
-	background-color: pink;
-}
-.fotosGenero{
+@media screen and (min-width:1224px){
+	body{
+		clear:left;
+		background-color:#E2F8FF;
+	}
+	/*Encabezado*/
 	
-	margin-top: 50px;
-	width: 278px;
+	.encabezado{
+		background-color: #00B9FF;
+	}
+	.navegador *{	
+		text-decoration: none;
+		color: white;
+		font-size: 25px;
+		list-style: none;
+		display: inline;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
+	.navegadorEncabezado{
+		font-size: 20px;
+		background-color: rgb(70, 206, 255);
+	}
+	.Telefono{
+		color: white;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-size: 20px;	
+	}
+	.logo{
+		width: 105px;
+		height: auto;	
+	}
+	.search{
+		font-family: Verdana, Geneva, Tahoma, wsans-serif;
+		border-radius: 10px;
+		width: 250px;
+		height: 30px;
+		text-align: center;
+	}
+	
+	.banner{
+		width: 100%;
+		height: auto;
+	}
+	
+	.Titulo {
+		color: black;
+		font-size: 25px;	
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
+	.Marca {
+		color: gray;
+		font-size: 15px;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
+	.Precio {
+		color: blue;
+		font-size: 25px;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;	
+		margin-top: 10px;
+	}
+	.Producto{
+		float: left;	
+		margin-top: 50px;
+		margin-right: 35px;
+		padding: 15px;
+		background-color: white;
+	}	
+	.Producto:hover{
+		 -webkit-transform: scale(0.8);
+		  -ms-transform: scale(0.8);
+		  transform: scale(1.07);
+		box-shadow: 0.1px 10px 18px #888888;
+	}
+	.FotoProducto {
+		width: 200px;
+		align-items: center;
+		vertical-align: center;
+	}
+	.DivFoto {
+		width: 200px;
+		height: 200px;
+		vertical-align: center;
+		align-items: center;
+	}
+	.PalabraDestacados{
+		color:rgb(1, 95, 236);	
+		font-size: 60px;
+		font-family: k26toyblocks123regular;
+		text-align: center;
+		border: rgb(0, 132, 255) solid 2px;
+	
+	}
+	.ProductosDestacados{	
+		margin: auto;
+		width: 1100px;
+	}
+	.DatosProductos{
+		border-top: blue solid 1px;
+		padding-top: 20px;
+		margin-top: 20px;
+	}
+	/*Aside cartas genero*/
+	.Aside{
+		clear:left;
+		text-align:center;
+	}
+	.palabraGenero{
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-size: 300%;
+		font-weight:bold;
+		text-align: center;
+	}
+	.CartasGenero{
+		display: inline-block;	
+		margin-top: 150px;
+		margin-bottom: 100px;
+		background-color: #FAFAFA;
+		margin-right: 43px;
+		width: 35%;
+	}
+	.CartasGenero:hover {
+		-webkit-transform: scale(0.8);
+		  -ms-transform: scale(0.8);
+		  transform: scale(1.07);
+		box-shadow: 0.1px 10px 18px #888888;
+		border: none;
+	}
+	.Nenes:hover {
+		background-color: #FF8686;
+	}
+	.Bebes:hover {
+		background-color: #BFEAFF;
+	}
+	.fotosGenero{
+		margin-top: 50px;
+		width: 45%;
+		display:inline-block;
+		margin:auto;
+	}	
 }
-/*Encabezado*/
+/*smartphone ipads tablets*/
 
-.encabezado{
-	background-color: #00B9FF;
-}
-.navegador *{	
-	text-decoration: none;
-	color: white;
-	font-size: 25px;
-	list-style: none;
-	display: inline;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.navegadorEncabezado{
-	font-size: 20px;
-	background-color: rgb(70, 206, 255);
-}
-.Telefono{
-	color: white;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 20px;	
-}
-.logo{
-	width: 105px;
-	height: auto;	
-}
-.search{
-	font-family: Verdana, Geneva, Tahoma, wsans-serif;
-	border-radius: 10px;
-	width: 250px;
-	height: 30px;
-	text-align: center;
+@media screen and (max-width:1223px){
+	body{
+		clear:left;
+		background-color:#E2F8FF;
+	}
+	/*Encabezado*/
+	
+	.encabezado{
+		background-color: #00B9FF;
+	}
+	.navegador *{	
+		text-decoration: none;
+		color: white;
+		font-size: 25px;
+		list-style: none;
+		display: inline;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
+	.navegadorEncabezado{
+		font-size: 20px;
+		background-color: rgb(70, 206, 255);
+	}
+	.Telefono{
+		color: white;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-size: 20px;	
+	}
+	.logo{
+		width: 105px;
+		height: auto;	
+	}
+	.search{
+		font-family: Verdana, Geneva, Tahoma, wsans-serif;
+		border-radius: 10px;
+		width: 250px;
+		height: 30px;
+		text-align: center;
+	}
+	
+	.banner{
+		width: 100%;
+		height: auto;
+	}
+	
+	.Titulo {
+		color: black;
+		font-size: 25px;	
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
+	.Marca {
+		color: gray;
+		font-size: 15px;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
+	.Precio {
+		color: blue;
+		font-size: 25px;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;	
+		margin-top: 10px;
+	}
+	.Producto{
+		float: left;	
+		margin-top: 50px;
+		margin-right: 35px;
+		padding: 15px;
+		background-color: white;
+	}	
+	.Producto:hover{
+		 -webkit-transform: scale(0.8);
+		  -ms-transform: scale(0.8);
+		  transform: scale(1.07);
+		box-shadow: 0.1px 10px 18px #888888;
+	}
+	.FotoProducto {
+		width: 200px;
+		align-items: center;
+		vertical-align: center;
+	}
+	.DivFoto {
+		width: 200px;
+		height: 200px;
+		vertical-align: center;
+		align-items: center;
+	}
+	.PalabraDestacados{
+		color:rgb(1, 95, 236);	
+		font-size: 60px;
+		font-family: k26toyblocks123regular;
+		text-align: center;
+		border: rgb(0, 132, 255) solid 2px;
+	
+	}
+	.ProductosDestacados{	
+		margin: auto;
+		width: 1100px;
+	}
+	.DatosProductos{
+		border-top: blue solid 1px;
+		padding-top: 20px;
+		margin-top: 20px;
+	}
+	/*Aside cartas genero*/
+	.Aside{
+		clear:left;
+		text-align:center;
+	}
+	.palabraGenero{
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-size: 300%;
+		font-weight:bold;
+		text-align: center;
+	}
+	.CartasGenero{
+		display: inline-block;	
+		margin-top: 150px;
+		margin-bottom: 100px;
+		background-color: #FAFAFA;
+		margin-right: 43px;
+		width: 35%;
+	}
+	.CartasGenero:hover {
+		-webkit-transform: scale(0.8);
+		  -ms-transform: scale(0.8);
+		  transform: scale(1.07);
+		box-shadow: 0.1px 10px 18px #888888;
+		border: none;
+	}
+	.Nenes:hover {
+		background-color: #FF8686;
+	}
+	.Bebes:hover {
+		background-color: #BFEAFF;
+	}
+	.fotosGenero{
+		margin-top: 50px;
+		width: 45%;
+		display:inline-block;
+		margin:auto;
+	}	
 }

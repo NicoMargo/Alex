@@ -14,12 +14,12 @@
     line-height: 45px;
 }
 .DivContenedor{
-    border: rgb(0, 60, 170) solid 2px;
+    box-sizing: border-box;
     width: 50%;
     margin: auto;
     margin-top: 40px;
     height: 350px;
- 
+    border: rgb(0, 60, 170) solid 2px;
 }
 .Datos{
     width: 50%;   
@@ -42,24 +42,23 @@
     width: 50%; 
     float: right;
 }
-.Map{
-    position: relative;
-    padding-bottom: 30%;
-    height: auto;
-    overflow: hidden;
-    clear: both;
-    
-}
-.Map iframe {
-    position: absolute;
-    top: 30px;
-    left: 15%;
-    width: 75% !important;
-}
 ul{
     float: left;
 }
 .Subte{
 float: right;
 margin-right: 95px;
+}
+.Map{
+    position: relative;
+    padding-bottom: 30%;
+    height: auto;
+    overflow: hidden;
+    clear: both;    
+}
+.Map iframe {
+    position: absolute;
+    top: 30px;
+    left: 15%;
+    width: 75% !important;
 }
