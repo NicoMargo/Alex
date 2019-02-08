@@ -19,81 +19,101 @@
 </head>
 <body>
 
-    <!--Header Dinamico-->
-		<nav class="navbar navbar-dark encabezado navbar-expand-sm sticky-top">
-		  
-		  
-				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				  <div class="navbar-nav ml-auto mr-auto text-center">
-						<img src="img/Logo Alex.png" width="100" height="40" class="d-inline-block align-top mr-4" alt="Logo Alex">
-
-						<div><input class="search ml-5" name="search" type="search" placeholder="¿Qué estas buscando?"value=""></div>
-				  </div>
-		  
-				  <div class="d-flex flex-row justify-content-center">
-						<div class="Telefono mr-4">(011) 4951-9648</div>
-				  </div>
-		  
-				</div>
-			 </nav>
-
-		 <!--Navbar Estatico-->
-		 <nav class="navbar navbar-dark navegadorEncabezado navbar-expand-sm">
-		  
-				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				  <div class="navbar-nav ml-auto mr-auto text-center">
-					  <a class="nav-item nav-link ml-5 pl-5" href="index.html">Inicio</a>
-					  <a class="nav-item nav-link" href="#">Juguetes</a>
-					  <a class="nav-item nav-link" href="#">Nenes</a>
-					  <a class="nav-item nav-link" href="#">Nenas</a>
-					  <a class="nav-item nav-link" href="#">Edad</a>
-                      <a class="nav-item nav-link" href="#">Destacados</a>
-                      <a class="nav-item nav-link" href="Marcas.html">Marcas</a>
-                      <a class="nav-item nav-link" href="Contacto.html">Contacto</a>
-                  </div>
-
-                  <div class="d-flex flex-row justify-content-center">
+   	<!--Header Dinamico-->
+	<div class="sticky-top">
+            <nav class="navbar navbar-dark encabezado navbar-expand-sm ">
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                      <div class="navbar-nav ml-auto mr-auto text-center">
+                            <img src="img/Logo Alex.png" width="100" height="40" class="d-inline-block align-top mr-4" alt="Logo Alex">
+    
+                            <div><input class="search ml-5" name="search" type="search" placeholder="¿Qué estas buscando?"value=""></div>
+                      </div>		  
+                      <div class="d-flex flex-row justify-content-center">
+                            <div class="Telefono mr-4">(011) 4951-9648</div>
+                      </div>
+                    </div>
+                 </nav>
+                 
+             <!--Navbar Estatico-->
+             <nav class="navbar navbar-dark navegadorEncabezado navbar-expand-sm ">		  
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                      <div class="navbar-nav ml-auto mr-auto text-center">
+                        <a class="nav-item nav-link ml-5 pl-5" href="index.html">Inicio</a>
+                        <a class="nav-item nav-link" href="#">Juguetes</a>
+                        <a class="nav-item nav-link" href="#">Nenes</a>
+                        <a class="nav-item nav-link" href="#">Nenas</a>
+                        <a class="nav-item nav-link" href="index.html#Destacados">Destacados</a>
+                        <a class="nav-item nav-link" href="Marcas.html">Marcas</a>
+                        <a class="nav-item nav-link active" href="Contacto.html">Contacto</a>
+                    </div>
+    
+                    <div class="d-flex flex-row justify-content-center">
                         <a class="nav-item nav-link mr-4 btn btn-primary" role="button" href="login.html">Mi Sesión</a>
-                  </div>
-
-                 </div>
-		  
-				
-             </nav>
+                    </div>
+    
+             </div>
+            </nav>
+        </div>
              
     <!--Formulario Login-->
 
-    <section class="container mt-5 mb-5 mb-10">
-
-            
-            <div class="col-4 mx-auto mt-5">
-                <h3 class="text-uppercase text-center">REGISTRARSE</h3>
-            
-                <form action="" class="justify-content-center flex-column flex-md-row">
-            
-                <div class="form-group my-3 mx-2 ">
-                    <label for="" class="mx-2">Nombre:</label>
-                    <input type="text" placeholder="Ingresa tu nombre" class="form-control">
-                </div>
-                <div class="form-group my-3 mx-2">
-                    <label for="" class="mx-2">Email:</label>
-                    <input type="email" placeholder="Ingresa tu email" class="form-control">
-                </div>
-                <div class="form-group my-3 mx-2">
-                        <label for="" class="mx-2">Contraseña:</label>
-                        <input type="password" placeholder="Ingresa tu contraseña" class="form-control">
-                        <small id="passwordHelpBlock" class="form-text text-muted">
-                            Tu contraseña debe contener un mínimo de 8 carácteres.
-                        </small>
-                </div>
-                <div class="form-group my-3 mx-2">
-                        <label for="" class="mx-2">Contraseña:</label>
-                        <input type="password" placeholder="Ingresa nuevamente tu contraseña" class="form-control">
-                </div>
-                <div class="form-group my-3 mx-4">
+    <section>
+        <div class="Formulario">
+            <h3 class="text-center">REGISTRARSE</h3>
+            <form action="" class="CentradoJustificado MargenTop">
+                    <div class="izquierda anchodivform">
+                            <div class="GrupoForm MargenDerecha CentradoJustificado">
+                                <label class=" MargenDerecha">Nombre:</label>
+                                <input type="text" placeholder="Ingresa tu nombre" class="ControlFormInput">
+                            </div>
+                            <div class="GrupoForm MargenDerecha">
+                                <label class=" MargenDerecha">Apellido:</label>
+                                <input type="text" placeholder="Ingresa tu apellido" class="ControlFormInput">
+                            </div>
+                            <div class="GrupoForm MargenDerecha" class="GrupoForm">
+                                <label class=" MargenDerecha">Provincia:</label>
+                                <input type="text" placeholder="Ingresa tu Provincia" class="ControlFormInput">
+                            </div>
+                            <div class="GrupoForm MargenDerecha">
+                                <label class=" MargenDerecha">Dirección:</label>
+                                <input type="text" placeholder="Ingresa tu Dirección" class="ControlFormInput">
+                            </div>
+                            <div class="GrupoForm MargenDerecha">
+                                <label class=" MargenDerecha">Codigo postal:</label>
+                                <input type="number" placeholder="Ingresa tu Codigo postal" class="ControlFormInput">
+                            </div>
+                        </div>
+                        <div class="izquierda anchodivform CentradoJustificado">
+                                <div class="GrupoForm MargenDerecha">
+                                    <label class=" ">Teléfono con codigo de area:</label>
+                                    <input type="number" placeholder="Ingresa tu teléfono" class="ControlFormInput">
+                                </div>
+                                <div class="GrupoForm MargenDerecha">
+                                    <label class=" ">DNI:</label>
+                                    <input type="number" placeholder="Ingresa tu DNI" class="ControlFormInput">
+                                </div>
+                                <div class="GrupoForm MargenDerecha" class="GrupoForm">
+                                    <label class=" ">Email:</label>
+                                    <input type="email" placeholder="Ingresa tu Email" class="ControlFormInput">
+                                </div>
+                                <div class="GrupoForm MargenDerecha">
+                                    <label class=" ">Contraseña:</label>
+                                    <input type="password" placeholder="Ingresa tu contraseña" class="ControlFormInput">
+                                    
+                                </div>
+                                <div class="GrupoForm MargenDerecha">
+                                    <label class=" ">Repetir contraseña</label>
+                                    <input type="password" placeholder="Ingresa tu contraseña" class="ControlFormInput">
+                                </div>
+                        </div>
+           
+                
+                <div class="GrupoForm izquierda">
                     <button class="btn btn-primary float-right" type="submit">Enviar</button>
                     </div>
-                <br>
+                <div class="mt-1 mx-2 font-weight-bold izquierda">
+                    <a href="login.html">¿Ya tenés cuenta? ¡Inicia Sesion aca!</a>
+                </div>
             
                 </form>
             </div>
