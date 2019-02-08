@@ -255,12 +255,13 @@
 		text-align: center;
 	}
 	.CartasGenero{
-		display: inline-block;	
+		display: inline-block;
 		margin-top: 150px;
 		margin-bottom: 100px;
 		background-color: #FAFAFA;
 		margin-right: 43px;
 		width: 35%;
+		height: 475px;
 	}
 	.CartasGenero:hover {
 		-webkit-transform: scale(0.8);
@@ -270,7 +271,7 @@
 		border: none;
 	}
 	.Nenes:hover {
-		background-color: #FF8686;
+		background-color: rgb(255, 193, 193);
 	}
 	.Bebes:hover {
 		background-color: #BFEAFF;
