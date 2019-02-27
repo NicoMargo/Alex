@@ -12,9 +12,6 @@
 .MargenTop{
     padding-top: 7%;
 }
-.CentradoJustificado{
-margin: auto;
-}
 .GrupoForm{
     display: -ms-flexbox;
     display: flex;
