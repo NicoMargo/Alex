@@ -51,14 +51,15 @@ margin-right: 95px;
 }
 .Map{
     position: relative;
-    padding-bottom: 30%;
-    height: auto;
-    overflow: hidden;
-    clear: both;    
+    padding-bottom: 5%;
+  
 }
 .Map iframe {
-    position: absolute;
-    top: 30px;
-    left: 15%;
-    width: 75% !important;
+    width: 100% !important;
+}
+.MargenIzquierda{
+    margin-left: 50% !important;
+}
+.DIB{
+    display:inline-block;
 }

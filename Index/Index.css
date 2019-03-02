@@ -66,6 +66,7 @@
 		margin-right: 35px;
 		padding: 15px;
 		background-color: white;
+		border-bottom: #00B9FF;
 	}	
 	.Producto:hover{
 		 -webkit-transform: scale(0.8);
@@ -90,6 +91,7 @@
 		font-family: k26toyblocks123regular;
 		text-align: center;
 		border: rgb(0, 132, 255) solid 2px;
+		background-color: rgb(70, 206, 255, 0.6);	
 	
 	}
 	.ProductosDestacados{	
@@ -282,4 +284,5 @@
 		display:inline-block;
 		margin:auto;
 	}	
+	
 }
