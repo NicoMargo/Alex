@@ -29,6 +29,15 @@
 		display: inline;
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 	}
+
+	.navegador:hover{
+		color: white;
+		-ms-transform: scale(0.8);
+		transition: transform 0.6s ease-in-out;
+		transform: scale(1.17);
+		text-decoration: none;
+	}
+
 	.navegadorEncabezado{
 		font-size: 20px;
 		background-color: rgb(70, 206, 255);
