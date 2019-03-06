@@ -54,9 +54,11 @@
 					  <a class="navegador" href="Contacto.html">Contacto</a>
 				</div>		 
 				
-
-					<img onclick="Alogin()"  src="img/user1.png" class="carritocompras" alt="user">
-					<img onclick="Acarrito()"  src="img/cart.png" class="carritocompras" alt="user">
+				<div class="d-flex flex-row justify-content-center">
+					<img onclick="Acarrito()" src="img/carrito.svg" class="carrito mr-3 mt-1" width="38px" height="18%" class="mr-3" alt="carro">
+					<!--<a class="nav-item nav-link mr-4 btn btn-primary" role="button" href="login.html">Mi Sesión</a>-->
+					<img onclick="Alogin()" src="img/user1.png" style="opacity: 0.7;" width="45px" height="45px" alt="">
+			  </div>
 
 			 </div>
 		</nav>
@@ -102,10 +104,19 @@
 				<span class="sr-only">Después</span>
 				</a>    
 			</div>
+
 			<section id="Destacados">
 				<!--Fotos para los juguetes destacados-->
-				<div style="width: 100%; height: 130px;"></div>
-				<p class="PalabraDestacados">Destacados</p>
+				<div style="width: 100%;"></div>
+			
+				<p class="PalabraDestacados">.</p>
+
+				<div class="col-4 mx-auto mt-5">
+					<h3 class="text-uppercase text-center">DESTACADOS</h3>
+					<br>
+			</div>
+			<hr>
+			<!--
 				<div class="ProductosDestacados">
 					<div class="Producto">							 
 						<div class="DivFoto" >
@@ -236,13 +247,86 @@
 								</div>
 						</div>	
 				</div>
-			</section>
+			</section>-->
+
+			<section class="container mt-1 pt-5">
+        <div class="card-group">
+            <div class="card mr-3">
+              <img class="card-img-top" src="img/tren.jpg" alt="Card image cap">
+              <div class="card-body">
+                <div class="d-flex">
+                  <h5 class="card-title mr-auto">Trencito</h5>
+                  <div class="text-success font-weight-bold">$70</div>
+                </div>
+								<p class="card-text">Descripción del producto.</p>
+								<div class="d-flex justify-content-between">
+										<a class="btn btn-primary" href="#" role="button">Comprar</a>
+										<img src="img/corazon2.svg" class="corazon" width="14%" height="14%" alt="favorito">
+								</div>
+  
+                </div>
+            </div>      
+
+            <div class="card mr-3">
+                <img class="card-img-top" src="img/tren.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <h5 class="card-title mr-auto">Trencito</h5>
+                    <div class="text-success font-weight-bold">$70</div>
+                  </div>
+                  <p class="card-text">Descripción del producto.</p>
+                  <div class="d-flex justify-content-between">
+											<a class="btn btn-primary" href="#" role="button">Comprar</a>
+											<img src="img/corazon2.svg" class="corazon" width="14%" height="14%" alt="favorito">
+									</div>
+    
+                  </div>
+              </div> 
+            
+              <div class="card mr-3">
+                <img class="card-img-top" src="img/tren.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <h5 class="card-title mr-auto">Trencito</h5>
+                    <div class="text-success font-weight-bold">$70</div>
+                  </div>
+                  <p class="card-text">Descripción del producto.</p>
+                  <div class="d-flex justify-content-between">
+											<a class="btn btn-primary" href="#" role="button">Comprar</a>
+											<img src="img/corazon2.svg" class="corazon" width="14%" height="14%" alt="favorito">
+									</div>
+    
+                  </div>
+              </div> 
+
+              <div class="card">
+                <img class="card-img-top" src="img/tren.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <h5 class="card-title mr-auto">Trencito</h5>
+                    <div class="text-success font-weight-bold">$70</div>
+                  </div>
+                  <p class="card-text">Descripción del producto.</p>
+                  <div class="d-flex justify-content-between">
+											<a class="btn btn-primary" href="#" role="button">Comprar</a>
+											<img src="img/corazon2.svg" class="corazon" width="14%" height="14%" alt="favorito">
+									</div>
+    
+                  </div>
+              </div> 
+             
+        </div> 
 		</main>	
 		
-		
+		<br>	
 		<aside role="complementary" class="Aside">
 
-			<p class="PalabraDestacados">Categorías</p>
+			<div class="col-4 mx-auto mt-5">
+				<h3 class="text-uppercase text-center">CATEGORÍAS</h3>
+				<br>
+		</div>
+		<hr>
+
 			<div class="Nenes CartasGenero ml-5	">
 				<h3 class="palabraGenero">Nenes Y Nenas</h3><br>
 				<img class="fotosGenero" src="img/Mario.png" alt="Mario Bros">
