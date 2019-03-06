@@ -134,9 +134,9 @@
 		clear:left;
 		text-align:center;
 	}
+	
 	.palabraGenero{
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
-		font-size: 3rem;
 		font-size: 150%;
 		font-weight:bold;
 		text-align: center;
@@ -147,10 +147,7 @@
 		margin-bottom: 100px;
 		background-color: #FAFAFA;
 		margin-right: 43px;
-		width: 35%;
-		height: 50%;
 		width: 25%;
-
 	}
 	.CartasGenero:hover {
 		-webkit-transform: scale(0.8);
@@ -159,6 +156,8 @@
 		box-shadow: 0.1px 10px 18px #888888;
 		border: none;
 	}
+
+	
 	.corazon{
 		opacity: 0.46;
 		transition: opacity 1s ease-in-out;
