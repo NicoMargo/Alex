@@ -8,6 +8,16 @@
 	}
 	/*Encabezado*/
 	
+	.navegador {	
+		text-decoration: none;
+		color: white;
+		font-size: 1.3rem;
+		list-style: none;
+		display: inline-block;
+		margin-right: 18px;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
+	
 	.encabezado{
 		background-color: #00B9FF;
 	}
