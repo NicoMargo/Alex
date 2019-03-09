@@ -1,10 +1,10 @@
 {
-  "name": "Jugueteria Alex",
+  "name": "Alex",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "../JS/Index.js",
   "scripts": {
-    "dev": "nodemon Index/"
+    "dev": "nodemon JS/Index.js"
   },
   "repository": {
     "type": "git",
