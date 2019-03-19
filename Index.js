@@ -1,9 +1,4 @@
-function Alogin(){
-	location.href='login.html'
-}
-function Acarrito(){
-	location.href='Carrito.html'
-}
+
 
 const express = require('express');
 const morgan = require('morgan');
@@ -17,7 +12,7 @@ app.engine('.hbs', exphbs({
 	layoutsdir: path.join(app.get('views'), 'layouts'),
 	partialdir: path.join(app.get('views'), 'partials'),
 	extname: '.hbs',
-	helpers: require('./JS/Handlebars')
+	helpers: require('./Public/JS/Handlebars')
 }));
 
 app.set('view engine', '.hbs');
@@ -36,7 +31,7 @@ app.use(require('./Routes/Index'));
 app.use(require('./Routes/Authentication'));
 app.use('/links',require('./Routes/Links'));
 // Public
-
+app.use(express.static(path.join(__dirname, 'Public')));
 // Starting the server
 app.listen(app.get('port'),() => {
 	console.log('server on port', app.get('port'));
