@@ -64,3 +64,4 @@ Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.Views.pdb
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.dll
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.pdb
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.csproj.CopyComplete
+Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\Razor\Views\Backend\Pruebas.g.cshtml.cs

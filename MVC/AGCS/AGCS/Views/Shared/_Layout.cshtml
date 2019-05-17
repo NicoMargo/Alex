@@ -6,8 +6,8 @@
     <title>@ViewData["Title"] - AGCS</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="~/css/Layout.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -16,37 +16,43 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">AGCS</a>
+<body >
+        <nav class="row sticky-top">
+            <div class="bg-danger w-100">
+                <a href="index.html">
+                    <h1 class="pl-5 offset-md-1 text-white float-left">AGCS</h1>
+                </a>
+                <div class="offset-md-9 pt-2">
+                    <span class="text-white" id="empresa">Empresa</span>
+                    <span class="ml-2 mr-2 text-white">|</span>
+                    <span class="text-white" id="usuario">Usuario</span>
+                    <span class="ml-2 mr-2 text-white">|</span>
+                    <img src="./img/icon-user.png" alt="icono-User" class="w-10 mr-5">
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
+        </nav>
+
+
+        <div class="float-left" >
+            <div class=" bg-dark" style="height: 700px; width:200px;">
+                <aside>
+                    <div class="mx-auto w-8">
+                        <a href=""><img class="mt-4 w-450" src="~/images/camion.png" alt=""></a><br>
+                        <a href=""><img class="mt-4 w-450" src="./images/dinero.png" alt=""></a><br>
+                        <a href=""><img class="mt-4 w-450" src="./images/clientes.png" alt=""></a><br>
+                        <a href=""><img class="mt-4 w-450" src="./images/proveedores.png" alt=""></a><br>
+                        <a href=""><img class="mt-4 w-450" src="./images/diagrama.png" alt=""></a><br>
+                        <a href=""><img class="mt-4 w-450" src="./images/ajustes.png" alt=""></a>
+                    </div>
+                </aside>
             </div>
         </div>
-    </nav>
-
-    <partial name="_CookieConsentPartial" />
-
-    <div class="container body-content">
         @RenderBody()
-        <hr />
+
         <footer>
             <p>&copy; 2019 - AGCS</p>
         </footer>
-    </div>
+    
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

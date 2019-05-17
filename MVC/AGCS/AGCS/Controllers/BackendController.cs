@@ -22,7 +22,7 @@ namespace AGCS.Controllers
         }
 
         // GET: Backend/Create
-        public ActionResult Create()
+        public ActionResult Pruebas()
         {
             return View();
         }
