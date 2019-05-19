@@ -12,6 +12,7 @@ namespace AGCS.Controllers
     {
         public IActionResult Index()
         {
+            BD.Conectar();
             return View();
         }
 
