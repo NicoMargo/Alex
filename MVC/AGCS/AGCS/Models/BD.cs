@@ -9,8 +9,8 @@ namespace AGCS.Models
 {
     public class BD
     {
-        public static string connectionString = "Server=127.0.0.1;User=root;Database=pruebaclientes"; //Ort
-      //public static string connectionString = @"Server=DESKTOP-5P28OS5;Database=QEQA03;Trusted_Connection=True;"; //Anush
+       //public static string connectionString = "Server=127.0.0.1;User=root;Database=pruebaclientes"; //Anush
+      public static string connectionString = "Server=localhost;User=root;Database=pruebaclientes"; //Ort
       //public static string connectionString = @"Server=DESKTOP-P6PCH8N\SQLEXPRESS;Database=QEQA03;Trusted_Connection=True;"; //Chino
 
 
