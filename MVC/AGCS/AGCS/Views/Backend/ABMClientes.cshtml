@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿@using AGCS.Models
+@model AGCS.Models.Client
+<!doctype html>
 <html lang="es">
 
 <head>
@@ -64,159 +66,137 @@
                     <table id="myTable">
                         <tr class="header">
                             <th style="width:20%;">Apellido</th>
-                            <th style="width:20%;">Nombre</th>
+                            <th style="width:15%;">Nombre</th>
                             <th style="width:15%;">DNI/CUIT/CUIL</th>
-                            <th style="width:15%;">Teléfono</th>
-                            <th style="width:30%;">Email</th>
+                            <th style="width:10%;">Celular</th>
+                            <th style="width:25%;">Email</th>
+                            <th style="width:20%;">Modificar</th>
                         </tr>
                         <tr>
-                            <td>Liu</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Margossian</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Lombardi</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Arru</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Caputo</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Bruno</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Gibaut</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Lerner</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Kemensky</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Washi</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Ramos</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Binker</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Macri</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>XD</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Jojo</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Lisa Lisa</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Speedwagon</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Patricio Amigo Satanico Del Chino</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Gabo</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Saidman</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Santos</td>
-                            <td>Chino</td>
-                            <td>43994080</td>
-                            <td>44325567</td>
-                            <td>Chino@gmail.com</td>
+                            @{
+                                foreach (Client MyClient in ViewBag.Clients)
+                                {
+                                    <td>@MyClient.Surname</td>
+                                    <td>@MyClient.Name</td>
+                                    <td>@MyClient.Dni</td>
+                                    <td>@MyClient.Cellphone</td>
+                                    <td>@MyClient.Email</td>
+                                    <button type="button" class="btn btn-primary"  >Extra large modal</button>
+                                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl" id="@MyClient.Id">Modificar</button></td>
+                                }
+                            }
                         </tr>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Extra large modal -->
+
+    <div class="modal fade bd-example-modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Datos Del Cliente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="offset-md-1 col-md-2">
+                            <div class="text-center">
+                                <strong><span>Apellido</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="Liu" type="text">
+                        </div>
+                        <div class="offset-md-1 col-md-3">
+                            <div class="text-center">
+                                <strong><span>Nombre</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="Chino" type="text">
+                        </div>
+                        <div class="offset-md-1 col-md-2">
+                            <div class="text-center">
+                                <strong><span>DNI/CUIT/CUIL</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="43994080" type="text">
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="offset-md-1 col-md-2">
+                            <div class="text-center">
+                                <strong><span>Telefono</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="44322210" type="text">
+                        </div>
+                        <div class="offset-md-1 col-md-3">
+                            <div class="text-center">
+                                <strong><span>Email</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="chino_Liu_2001@gmail.com" type="text">
+                        </div>
+                        <div class="offset-md-1 col-md-2">
+                            <div class="text-center">
+                                <strong><span>Telefono 2</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="1549836476" type="text">
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <h4 class="badge-pill badge-danger">Dirección</h4>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="offset-md-1 col-md-2">
+                            <div class="text-center">
+                                <strong><span>Localidad</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="Caballito" type="text">
+                        </div>
+                        <div class="offset-md-1 col-md-3">
+                            <div class="text-center">
+                                <strong><span>Direccion</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="Avenida Rivadavia" type="text">
+                        </div>
+                        <div class="offset-md-1 col-md-2">
+                            <div class="text-center">
+                                <strong><span>Provincia</span></strong>
+                            </div>
+                            <select class="form-control">
+                                <option value="CABA">CABA</option>
+                                <option value="Buenos Aires">Buenos Aires</option>
+                                <option value="Mendoza">Mendoza</option>
+                                <option value="Santa Fé">Santa Fe</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="offset-md-1 col-md-2">
+                            <div class="text-center">
+                                <strong><span>Número</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="5985" type="text">
+                        </div>
+                        <div class="offset-md-1 col-md-3">
+                            <div class="text-center">
+                                <strong><span>Piso</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="5" type="text">
+                        </div>
+                        <div class="offset-md-1 col-md-2">
+                            <div class="text-center">
+                                <strong><span>Letra</span></strong>
+                            </div>
+                            <input class="form-control text-center" value="A" type="text">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secundary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
                 </div>
             </div>
         </div>

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Threading;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using AGCS.Models;
 
 namespace AGCS.Controllers
 {
@@ -17,7 +19,9 @@ namespace AGCS.Controllers
 
         // GET: Backend/Details/5
         public ActionResult ABMClientes()
-        {
+        {   
+            BD.BringClients();
+            ViewBag.Clients = BD.ListOfClients;
             return View();
         }
 
