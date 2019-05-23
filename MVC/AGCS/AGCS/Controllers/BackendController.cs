@@ -11,6 +11,7 @@ namespace AGCS.Controllers
 {
     public class BackendController : Controller
     {
+        public int IdBE;
         // GET: Backend
         public ActionResult Index()
         {

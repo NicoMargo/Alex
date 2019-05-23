@@ -32,7 +32,7 @@ namespace AGCS.Models
             //Bring Clients
         public static void BringClients()
         {
-            
+            ListOfClients.Clear();   
             MySqlConnection Connection = Conect();            
             MySqlCommand CommandConnection = Connection.CreateCommand();
             CommandConnection.CommandType = System.Data.CommandType.StoredProcedure;
@@ -41,19 +41,19 @@ namespace AGCS.Models
             while (ConnectionReader.Read())
             {
                 Client OneClient = new Client(
-                    Convert.ToInt32(ConnectionReader["ID"]),
+                    Convert.ToInt32(ConnectionReader["idclients"]),
                     ConnectionReader["Name"].ToString(), 
-                    ConnectionReader["Surame"].ToString(),
-                    Convert.ToInt32(ConnectionReader["DNI"]),
+                    ConnectionReader["Surname"].ToString(),
+                    Convert.ToInt32(ConnectionReader["Dni"]),
                     ConnectionReader["Email"].ToString(),
                     Convert.ToInt32(ConnectionReader["Telephone"]),
                     Convert.ToInt32(ConnectionReader["Cellphone"]),
                     ConnectionReader["Town"].ToString(),
-                    ConnectionReader["Address"].ToString(),
+                    ConnectionReader["address"].ToString(),
                     ConnectionReader["Province"].ToString(),
                     ConnectionReader["Leter"].ToString(),
                     Convert.ToInt32(ConnectionReader["Number"]),
-                    Convert.ToInt32(ConnectionReader["floor"]));
+                    Convert.ToInt32(ConnectionReader["Floor"]));
                 ListOfClients.Add(OneClient);
             }
             Disconect(Connection);
