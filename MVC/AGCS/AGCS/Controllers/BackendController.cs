@@ -20,10 +20,18 @@ namespace AGCS.Controllers
 
         // GET: Backend/Details/5
         public ActionResult ABMClientes()
-        {   
+        {
             BD.BringClients();
             ViewBag.Clients = BD.ListOfClients;
             return View();
+        }
+
+        [HttpPost]
+        // El Json recibido será serializado automáticamente al objeto nuevo cocche teniendo en cuenta que las propiedades han de tener el mismo nombre
+        public JsonResult GetDataClient(int id)
+        {
+            string nombre = BD.ListOfClients[id].Name;
+            return Json("{'Success':'true'}");            
         }
 
         // GET: Backend/Create
@@ -94,5 +102,7 @@ namespace AGCS.Controllers
                 return View();
             }
         }
+
+        
     }
 }

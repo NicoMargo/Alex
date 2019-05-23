@@ -1,5 +1,14 @@
-﻿window.onload = function () {
+﻿$(document).ready(function () {
     $(".btn").click(function () {
-        let id = $(this).attr("id"));
+        let Index = $(this).attr("id");
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: { id: Index }, 
+            success: function (msg) { alert("hola"); },
+            error: function (result) {
+                alert("ERROR ");
+            }
+        });
     });
-};
+});
