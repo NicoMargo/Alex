@@ -34,7 +34,8 @@
                             <th style="width:15%;">DNI/CUIT/CUIL</th>
                             <th style="width:10%;">Celular</th>
                             <th style="width:25%;">Email</th>
-                            <th style="width:20%;">Modificar</th>
+                            <th style="width:10%;"></th>
+                            <th style="width:10%;"></th>
                         </tr>
                         @{
                             for (int i = 0; i < ViewBag.Clients.Count; i++)
@@ -45,7 +46,7 @@
                                     <td>@ViewBag.Clients[i].Dni</td>
                                     <td>@ViewBag.Clients[i].Cellphone</td>
                                     <td>@ViewBag.Clients[i].Email</td>
-                                    <td><button type="button" name="buttonId" class="btn btn-primary" id="@i" data-toggle="modal" data-target=".bd-example-modal-xl">Modificar</button></td>
+                                    <td><<a class="EditBtn" id="@i" data-toggle="modal" data-target=".bd-example-modal-xl"><img class="EditBtn" src="~/images/edit.png"/></a></td>
                                 </tr>
                             }
                         }
@@ -85,13 +86,13 @@
                                 <div class="text-center">
                                     <strong><span>Nombre</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="Chino" type="text">
+                                <input id="modalName" class="form-control text-center" value="Chino" type="text">
                             </div>
                             <div class="offset-md-1 col-md-2">
                                 <div class="text-center">
                                     <strong><span>DNI/CUIT/CUIL</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="43994080" type="text">
+                                <input id="modalDni" class="form-control text-center" value="43994080" type="text">
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -99,19 +100,19 @@
                                 <div class="text-center">
                                     <strong><span>Telefono</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="44322210" type="text">
+                                <input id="modalTelephone" class="form-control text-center" value="44322210" type="text">
                             </div>
                             <div class="offset-md-1 col-md-3">
                                 <div class="text-center">
                                     <strong><span>Email</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="chino_Liu_2001@gmail.com" type="text">
+                                <input id="modelEmail" class="form-control text-center" value="chino_Liu_2001@gmail.com" type="text">
                             </div>
                             <div class="offset-md-1 col-md-2">
                                 <div class="text-center">
                                     <strong><span>Telefono 2</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="1549836476" type="text">
+                                <input id="modalCellphone" class="form-control text-center" value="1549836476" type="text">
                             </div>
                         </div>
                         <div class="text-center mt-5">
@@ -122,13 +123,13 @@
                                 <div class="text-center">
                                     <strong><span>Localidad</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="Caballito" type="text">
+                                <input id="modelTown" class="form-control text-center" value="Caballito" type="text">
                             </div>
                             <div class="offset-md-1 col-md-3">
                                 <div class="text-center">
                                     <strong><span>Direccion</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="Avenida Rivadavia" type="text">
+                                <input id="modelAddress" class="form-control text-center" value="Avenida Rivadavia" type="text">
                             </div>
                             <div class="offset-md-1 col-md-2">
                                 <div class="text-center">
@@ -147,19 +148,19 @@
                                 <div class="text-center">
                                     <strong><span>Número</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="5985" type="text">
+                                <input id="modelNumber" class="form-control text-center" value="5985" type="text">
                             </div>
                             <div class="offset-md-1 col-md-3">
                                 <div class="text-center">
                                     <strong><span>Piso</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="5" type="text">
+                                <input id="modelFloor" class="form-control text-center" value="5" type="text">
                             </div>
                             <div class="offset-md-1 col-md-2">
                                 <div class="text-center">
                                     <strong><span>Letra</span></strong>
                                 </div>
-                                <input class="form-control text-center" value="A" type="text">
+                                <input id="modelAppartment" class="form-control text-center" value="A" type="text">
                             </div>
                         </div>
 

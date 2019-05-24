@@ -42,12 +42,10 @@ namespace AGCS.Controllers
             Client cUpdateClient = new Client(BD.OneClient.Id, Name, Surname,dni,email,Telephone,Cellphone, Town,Address,Province,Leter,Number,Floor);
             try
             {
-                                
+
+                
             }
             catch
-            {
-            }
-            finally
             {
                 Succes = false;
             }

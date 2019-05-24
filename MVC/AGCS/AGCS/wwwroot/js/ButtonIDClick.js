@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $(".btn").click(function () {
+    $(".EditBtn").click(function () {
         let Index = $(this).attr("id");        
         $.ajax({
             type: "POST",
@@ -17,14 +17,26 @@
 
 
     $("#Submit").click(function () {
-        var prueba = 333;
+
         $.ajax({
             type: "POST",
             url: urlUpdate,
-            data: { Data: prueba },
-            success: function (DataJsonClient) {
-                var Data = JSON.parse(DataJsonClient);
-                alert(Data.Name);
+            data: {
+                Surname: $("#modalSurname").val(),
+                Name: $("#modalName").val(),
+                dni: $("#modalDni").val(),
+                email: $("#modelEmail").val(),
+                Telephone: $("#modalTelephone").val(),
+                Cellphone: $("#modalCellphone").val(),
+                Town: $("#modelTown").val(),
+                Address: $("#modelAddress").val(),
+                Province: 1,
+                Leter: $("#modelAppartment").val(),
+                Number: $("#modelNumber").val(),
+                Floor: $("#modelFloor").val()
+            },
+            success: function () {
+                location.reload();
             },
             error: function () {
                 alert("ERROR");
