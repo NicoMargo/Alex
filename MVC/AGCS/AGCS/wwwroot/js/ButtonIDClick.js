@@ -1,13 +1,33 @@
 ﻿$(document).ready(function () {
     $(".btn").click(function () {
-        let Index = $(this).attr("id");
+        let Index = $(this).attr("id");        
         $.ajax({
-            method: "POST",
+            type: "POST",
             url: url,
-            data: { id: Index }, 
-            success: function (msg) { alert("hola"); },
-            error: function (result) {
-                alert("ERROR ");
+            data: { id: Index },             
+            success: function (DataJsonClient) {
+                var Data = JSON.parse(DataJsonClient);
+                alert(Data.Name);
+            },
+            error: function () {
+                alert("ERROR");
+            }
+        });
+    });
+
+
+    $("#Submit").click(function () {
+        var prueba = 333;
+        $.ajax({
+            type: "POST",
+            url: urlUpdate,
+            data: { Data: prueba },
+            success: function (DataJsonClient) {
+                var Data = JSON.parse(DataJsonClient);
+                alert(Data.Name);
+            },
+            error: function () {
+                alert("ERROR");
             }
         });
     });

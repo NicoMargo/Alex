@@ -6,32 +6,53 @@ using System.Threading;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using AGCS.Models;
+using Newtonsoft.Json;
 
 namespace AGCS.Controllers
 {
     public class BackendController : Controller
     {
-        public int IdBE;
+       
         // GET: Backend
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Backend/Details/5
+        
         public ActionResult ABMClientes()
         {
             BD.BringClients();
             ViewBag.Clients = BD.ListOfClients;
             return View();
         }
-
+        
         [HttpPost]
-        // El Json recibido será serializado automáticamente al objeto nuevo cocche teniendo en cuenta que las propiedades han de tener el mismo nombre
         public JsonResult GetDataClient(int id)
         {
-            string nombre = BD.ListOfClients[id].Name;
-            return Json("{'Success':'true'}");            
+            BD.BringOneClient(id);
+            string JsonDataClient = JsonConvert.SerializeObject(BD.OneClient);
+            return Json(JsonDataClient);            
+        }
+        [HttpPost]
+        public bool UpdateClient(string Surname, string Name, int dni, string email, int Telephone, int Cellphone, string Town, string Address, string Province, string Leter, int Number, int Floor)
+        {
+            bool Succes = true;
+            
+            Client cUpdateClient = new Client(BD.OneClient.Id, Name, Surname,dni,email,Telephone,Cellphone, Town,Address,Province,Leter,Number,Floor);
+            try
+            {
+                                
+            }
+            catch
+            {
+            }
+            finally
+            {
+                Succes = false;
+            }
+            
+            return Succes;
         }
 
         // GET: Backend/Create
@@ -39,69 +60,13 @@ namespace AGCS.Controllers
         {
             return View();
         }
-
-        // POST: Backend/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        void UpdateClient(Client Updateclient)
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
+    
 
-        // GET: Backend/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Backend/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Backend/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Backend/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+      
 
         
     }
