@@ -11,23 +11,54 @@ namespace AGCS.Models
     {
        //public static string connectionString = "Server=127.0.0.1;User=root;Database=pruebaclientes"; //Anush
       public static string connectionString = "Server=localhost;User=root;Database=pruebaclientes"; //Ort
-      //public static string connectionString = @"Server=DESKTOP-P6PCH8N\SQLEXPRESS;Database=QEQA03;Trusted_Connection=True;"; //Chino
+      public static List<Client> ListOfClients = new List<Client>();
 
 
 
-
-        //Funciones para la bd=====================================================================================
-        public static MySqlConnection Conectar()
+        //Funciones para la bd
+        public static MySqlConnection Conect()
         {
-             MySqlConnection conexion = new MySqlConnection(connectionString);
-             conexion.Open();
-             return conexion;
+             MySqlConnection Connection = new MySqlConnection(connectionString);
+            Connection.Open();
+             return Connection;
         }
 
-        public static void Desconectar(MySqlConnection conexion)
+        public static void Disconect(MySqlConnection Connection)
         {
-            conexion.Close();
+            Connection.Close();
         }
+
+        //Bring objects 
+            //Bring Clients
+        public static void BringClients()
+        {
+            ListOfClients.Clear();   
+            MySqlConnection Connection = Conect();            
+            MySqlCommand CommandConnection = Connection.CreateCommand();
+            CommandConnection.CommandType = System.Data.CommandType.StoredProcedure;
+            CommandConnection.CommandText = "sp_BringClients";
+            MySqlDataReader ConnectionReader = CommandConnection.ExecuteReader();
+            while (ConnectionReader.Read())
+            {
+                Client OneClient = new Client(
+                    Convert.ToInt32(ConnectionReader["idclients"]),
+                    ConnectionReader["Name"].ToString(), 
+                    ConnectionReader["Surname"].ToString(),
+                    Convert.ToInt32(ConnectionReader["Dni"]),
+                    ConnectionReader["Email"].ToString(),
+                    Convert.ToInt32(ConnectionReader["Telephone"]),
+                    Convert.ToInt32(ConnectionReader["Cellphone"]),
+                    ConnectionReader["Town"].ToString(),
+                    ConnectionReader["address"].ToString(),
+                    ConnectionReader["Province"].ToString(),
+                    ConnectionReader["Leter"].ToString(),
+                    Convert.ToInt32(ConnectionReader["Number"]),
+                    Convert.ToInt32(ConnectionReader["Floor"]));
+                ListOfClients.Add(OneClient);
+            }
+            Disconect(Connection);
+        }
+         
       
 
     }

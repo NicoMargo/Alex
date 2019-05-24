@@ -12406,7 +12406,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\43994080\\.nuget\\packages\\": {},
+    "C:\\Users\\43572145\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -12415,14 +12415,14 @@
       "projectUniqueName": "Z:\\AProyecto\\Alex\\MVC\\AGCS\\AGCS\\AGCS.csproj",
       "projectName": "AGCS",
       "projectPath": "Z:\\AProyecto\\Alex\\MVC\\AGCS\\AGCS\\AGCS.csproj",
-      "packagesPath": "C:\\Users\\43994080\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\43572145\\.nuget\\packages\\",
       "outputPath": "Z:\\AProyecto\\Alex\\MVC\\AGCS\\AGCS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\43994080\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\43572145\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12473,5 +12473,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché Z:\\AProyecto\\Alex\\MVC\\AGCS\\AGCS\\obj\\AGCS.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Threading;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using AGCS.Models;
 
 namespace AGCS.Controllers
 {
     public class BackendController : Controller
     {
+        public int IdBE;
         // GET: Backend
         public ActionResult Index()
         {
@@ -18,7 +21,17 @@ namespace AGCS.Controllers
         // GET: Backend/Details/5
         public ActionResult ABMClientes()
         {
+            BD.BringClients();
+            ViewBag.Clients = BD.ListOfClients;
             return View();
+        }
+
+        [HttpPost]
+        // El Json recibido será serializado automáticamente al objeto nuevo cocche teniendo en cuenta que las propiedades han de tener el mismo nombre
+        public JsonResult GetDataClient(int id)
+        {
+            string nombre = BD.ListOfClients[id].Name;
+            return Json("{'Success':'true'}");            
         }
 
         // GET: Backend/Create
@@ -89,5 +102,7 @@ namespace AGCS.Controllers
                 return View();
             }
         }
+
+        
     }
 }
