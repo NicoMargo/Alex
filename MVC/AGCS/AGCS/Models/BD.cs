@@ -12,7 +12,7 @@ namespace AGCS.Models
        //public static string connectionString = "Server=127.0.0.1;User=root;Database=pruebaclientes"; //Anush
       public static string connectionString = "Server=localhost;User=root;Database=pruebaclientes"; //Ort
       public static List<Client> ListOfClients = new List<Client>();
-
+        public static int idBusiness = 1;
 
 
         //Funciones para la bd
@@ -58,8 +58,62 @@ namespace AGCS.Models
             }
             Disconect(Connection);
         }
-         
-      
+       
 
-    }
+        public static void InsertClient(Client client)
+        {
+            MySqlConnection Connection = Conect();
+            MySqlCommand CommandConnection = Connection.CreateCommand();
+            CommandConnection.CommandType = System.Data.CommandType.StoredProcedure;
+            CommandConnection.CommandText = "spInsertClient";
+            CommandConnection.Parameters.AddWithValue("@idBusiness", idBusiness);
+            CommandConnection.Parameters.AddWithValue("@Name", client.Name);
+            CommandConnection.Parameters.AddWithValue("@Surname", client.Surname);
+            CommandConnection.Parameters.AddWithValue("@DNI_CUIT", client.Dni);
+            CommandConnection.Parameters.AddWithValue("@eMail", client.Email);
+            CommandConnection.Parameters.AddWithValue("@Telephone", client.Telephone);
+            CommandConnection.Parameters.AddWithValue("@Locality","");
+            CommandConnection.Parameters.AddWithValue("@idProvince", 0);
+            CommandConnection.Parameters.AddWithValue("@idDelivery", 0);
+            CommandConnection.Parameters.AddWithValue("@Comments", "");
+
+            CommandConnection.ExecuteNonQuery();
+            Disconect(Connection);
+
+        }
+        public static void UpdateClient(Client client)
+        {
+            MySqlConnection Connection = Conect();
+            MySqlCommand CommandConnection = Connection.CreateCommand();
+            CommandConnection.CommandType = System.Data.CommandType.StoredProcedure;
+            CommandConnection.CommandText = "spUpdateClient";
+            CommandConnection.Parameters.AddWithValue("@id", client.Id);
+            CommandConnection.Parameters.AddWithValue("@idBusiness", idBusiness);
+            CommandConnection.Parameters.AddWithValue("@Name", client.Name);
+            CommandConnection.Parameters.AddWithValue("@Surname", client.Surname);
+            CommandConnection.Parameters.AddWithValue("@DNI_CUIT", client.Dni);
+            CommandConnection.Parameters.AddWithValue("@eMail", client.Email);
+            CommandConnection.Parameters.AddWithValue("@Telephone", client.Telephone);
+            /*
+            CommandConnection.Parameters.AddWithValue("@Locality", "");
+            CommandConnection.Parameters.AddWithValue("@idProvince", 0);
+            CommandConnection.Parameters.AddWithValue("@idDelivery", 0);
+            CommandConnection.Parameters.AddWithValue("@Comments", "");
+            */
+            CommandConnection.ExecuteNonQuery();
+            Disconect(Connection);
+
+        }
+
+        public static void DeleteClient(int id)
+        {
+            MySqlConnection Connection = Conect();
+            MySqlCommand CommandConnection = Connection.CreateCommand();
+            CommandConnection.CommandType = System.Data.CommandType.StoredProcedure;
+            CommandConnection.CommandText = "spDeleteClient";
+            CommandConnection.Parameters.AddWithValue("@id", id);   
+            CommandConnection.Parameters.AddWithValue("@idBusiness", idBusiness);
+            CommandConnection.ExecuteNonQuery();
+            Disconect(Connection);
+        }
 }
