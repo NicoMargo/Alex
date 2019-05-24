@@ -21,6 +21,7 @@ namespace AGCS.Models
         private int _number;
         private int _floor;
 
+        //Only a few data for ABM client
         public Client(int id, string name, string surname, int dni, string email, int cellphone)
         {
             _id = id;
@@ -31,9 +32,26 @@ namespace AGCS.Models
             _cellphone = cellphone;
         }
 
+        //Full Client
         public Client(int id, string Name, string Surname, int dni, string email, int Telephone, int Cellphone, string Town, string Address, string Province, string Leter, int Number, int Floor)
         {
             _id = id;
+            _name = Name;
+            _surname = Surname;
+            _dni = dni;
+            _email = email;
+            _phone = Telephone;
+            _cellphone = Cellphone;
+            _town = Town;
+            _Address = Address;
+            _province = Province;
+            _leter = Leter;
+            _number = Number;
+            _floor = Floor;
+        }
+        //New Client
+        public Client( string Name, string Surname, int dni, string email, int Telephone, int Cellphone, string Town, string Address, string Province, string Leter, int Number, int Floor)
+        {
             _name = Name;
             _surname = Surname;
             _dni = dni;
