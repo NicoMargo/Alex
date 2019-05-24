@@ -9,48 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="CSS/Index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/Table.css">
+    <title>AGCS</title>
     
 
-    <title>AGCS</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        #myInput {
-            background-image: url('/css/searchicon.png');
-            background-position: 10px 10px;
-            background-repeat: no-repeat;
-            width: 100%;
-            font-size: 16px;
-            padding: 12px 20px 12px 40px;
-            border: 1px solid #ddd;
-            margin-bottom: 12px;
-        }
-
-        #myTable {
-            border-collapse: collapse;
-            width: 100%;
-            border: 1px solid #ddd;
-            font-size: 18px;
-        }
-
-            #myTable th, #myTable td {
-                text-align: left;
-                padding: 12px;
-            }
-
-            #myTable tr {
-                border-bottom: 1px solid #ddd;
-            }
-
-                #myTable tr.header, #myTable tr:hover {
-                    background-color: #f1f1f1;
-                }
-    </style>
 </head>
 
 <body>
@@ -82,10 +45,9 @@
                                     <td>@ViewBag.Clients[i].Dni</td>
                                     <td>@ViewBag.Clients[i].Cellphone</td>
                                     <td>@ViewBag.Clients[i].Email</td>
-                                    <td><button type="button" name="buttonId" class="btn btn-primary" id="@i">Modificar</button></td>
+                                    <td><button type="button" name="buttonId" class="btn btn-primary" id="@i" data-toggle="modal" data-target=".bd-example-modal-xl">Modificar</button></td>
                                 </tr>
                             }
-
                         }
                     </table>
                 </div>
@@ -93,9 +55,14 @@
         </div>
     </div>
 
+
+
+
     <!-- Extra large modal -->
 
-    <div class="modal fade bd-example-modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+
+
+    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -104,101 +71,104 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Apellido</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="Liu" type="text">
-                        </div>
-                        <div class="offset-md-1 col-md-3">
-                            <div class="text-center">
-                                <strong><span>Nombre</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="Chino" type="text">
-                        </div>
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>DNI/CUIT/CUIL</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="43994080" type="text">
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Telefono</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="44322210" type="text">
-                        </div>
-                        <div class="offset-md-1 col-md-3">
-                            <div class="text-center">
-                                <strong><span>Email</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="chino_Liu_2001@gmail.com" type="text">
-                        </div>
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Telefono 2</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="1549836476" type="text">
-                        </div>
-                    </div>
-                    <div class="text-center mt-5">
-                        <h4 class="badge-pill badge-danger">Dirección</h4>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Localidad</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="Caballito" type="text">
-                        </div>
-                        <div class="offset-md-1 col-md-3">
-                            <div class="text-center">
-                                <strong><span>Direccion</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="Avenida Rivadavia" type="text">
-                        </div>
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Provincia</span></strong>
-                            </div>
-                            <select class="form-control">
-                                <option value="CABA">CABA</option>
-                                <option value="Buenos Aires">Buenos Aires</option>
-                                <option value="Mendoza">Mendoza</option>
-                                <option value="Santa Fé">Santa Fe</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Número</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="5985" type="text">
-                        </div>
-                        <div class="offset-md-1 col-md-3">
-                            <div class="text-center">
-                                <strong><span>Piso</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="5" type="text">
-                        </div>
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Letra</span></strong>
-                            </div>
-                            <input class="form-control text-center" value="A" type="text">
-                        </div>
-                    </div>
+               
+                    <div class="modal-body">
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secundary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
-                </div>
+                        <div class="row">
+                            <div class="offset-md-1 col-md-2">
+                                <div class="text-center">
+                                    <strong><span>Apellido</span></strong>
+                                </div>
+                                <input id="modalSurname"  class="form-control text-center" value="Apellido" type="text">
+                            </div>
+                            <div class="offset-md-1 col-md-3">
+                                <div class="text-center">
+                                    <strong><span>Nombre</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="Chino" type="text">
+                            </div>
+                            <div class="offset-md-1 col-md-2">
+                                <div class="text-center">
+                                    <strong><span>DNI/CUIT/CUIL</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="43994080" type="text">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="offset-md-1 col-md-2">
+                                <div class="text-center">
+                                    <strong><span>Telefono</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="44322210" type="text">
+                            </div>
+                            <div class="offset-md-1 col-md-3">
+                                <div class="text-center">
+                                    <strong><span>Email</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="chino_Liu_2001@gmail.com" type="text">
+                            </div>
+                            <div class="offset-md-1 col-md-2">
+                                <div class="text-center">
+                                    <strong><span>Telefono 2</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="1549836476" type="text">
+                            </div>
+                        </div>
+                        <div class="text-center mt-5">
+                            <h4 class="badge-pill badge-danger">Dirección</h4>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="offset-md-1 col-md-2">
+                                <div class="text-center">
+                                    <strong><span>Localidad</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="Caballito" type="text">
+                            </div>
+                            <div class="offset-md-1 col-md-3">
+                                <div class="text-center">
+                                    <strong><span>Direccion</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="Avenida Rivadavia" type="text">
+                            </div>
+                            <div class="offset-md-1 col-md-2">
+                                <div class="text-center">
+                                    <strong><span>Provincia</span></strong>
+                                </div>
+                                <select class="form-control">
+                                    <option value="CABA">CABA</option>
+                                    <option value="Buenos Aires">Buenos Aires</option>
+                                    <option value="Mendoza">Mendoza</option>
+                                    <option value="Santa Fé">Santa Fe</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="offset-md-1 col-md-2">
+                                <div class="text-center">
+                                    <strong><span>Número</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="5985" type="text">
+                            </div>
+                            <div class="offset-md-1 col-md-3">
+                                <div class="text-center">
+                                    <strong><span>Piso</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="5" type="text">
+                            </div>
+                            <div class="offset-md-1 col-md-2">
+                                <div class="text-center">
+                                    <strong><span>Letra</span></strong>
+                                </div>
+                                <input class="form-control text-center" value="A" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secundary"  data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary" id="Submit" data-dismiss="modal">Guardar</button>
+                    </div>
+                
             </div>
         </div>
     </div>
@@ -207,15 +177,34 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>var url = "@Url.Action("GetDataClient", "Backend")"</script>
+    <script>
+        var url = "@Url.Action("GetDataClient", "Backend")";
+        var urlUpdate = "@Url.Action("UpdateClient", "Backend")";
+    </script>
     <script src="~/js/ButtonIDClick.js"></script>
+    <script>
+                /*$(document).ready(function () {
+            $(".btn").click(function () {
+            let Index = $(this).attr("id");
+            $.ajax({
+            method: "POST",
+            url: url,
+            data: { id: Index },
+            success: function (DataJsonClient) {
+            alert("Hola");
+            //$('#modalClient').modal('show');
+            },
+            error: function () {
+            alert("ERROR");
+            }
+            });
+            });
+            });*/
+    </script>
 
 </body>
 

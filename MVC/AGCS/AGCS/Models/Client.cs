@@ -21,6 +21,16 @@ namespace AGCS.Models
         private int _number;
         private int _floor;
 
+        public Client(int id, string name, string surname, int dni, string email, int cellphone)
+        {
+            _id = id;
+            _name = name;
+            _surname = surname;
+            _dni = dni;
+            _email = email;
+            _cellphone = cellphone;
+        }
+
         public Client(int id, string Name, string Surname, int dni, string email, int Telephone, int Cellphone, string Town, string Address, string Province, string Leter, int Number, int Floor)
         {
             _id = id;

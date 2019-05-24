@@ -1,4 +1,4 @@
-CREATE PROCEDURE `sp_BringClients` ()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_BringClients`()
 BEGIN
-select * from clients;
+select idClients, Name, Surname, Dni,Email,Cellphone from Clients;
 END

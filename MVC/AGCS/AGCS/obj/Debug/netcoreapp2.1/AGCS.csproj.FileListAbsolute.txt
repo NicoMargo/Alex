@@ -47,7 +47,6 @@ Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.AssemblyInfo.cs
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.TagHelpers.input.cache
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.TagHelpers.output.cache
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.RazorCoreGenerate.cache
-Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\Razor\Views\Backend\ABMClientes.g.cshtml.cs
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
@@ -99,3 +98,4 @@ D:\Anushavan\Escritorio\repos\alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.Vi
 D:\Anushavan\Escritorio\repos\alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.dll
 D:\Anushavan\Escritorio\repos\alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.pdb
 D:\Anushavan\Escritorio\repos\alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\AGCS.csproj.CopyComplete
+Z:\AProyecto\Alex\MVC\AGCS\AGCS\obj\Debug\netcoreapp2.1\Razor\Views\Backend\ABMClientes.g.cshtml.cs
