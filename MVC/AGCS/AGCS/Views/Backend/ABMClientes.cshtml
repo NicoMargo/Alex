@@ -50,8 +50,8 @@
                                     <td>@ViewBag.Clients[i].Dni</td>
                                     <td>@ViewBag.Clients[i].Cellphone</td>
                                     <td>@ViewBag.Clients[i].Email</td>
-                                    <td><a id="@i" data-toggle="modal" data-target="#updateClient"><img class="imageABM" src="~/images/edit.png" /></a></td>
-                                    <td><a id="@i" data-toggle="modal" data-target="#confirmationModal"><img class="w-50" src="~/images/delete.png" /></a></td>
+                                    <td><a data-toggle="modal" data-target="#updateClient"><img position="@i" class="imageABM" src="~/images/edit.png" /></a></td>
+                                    <td><a data-toggle="modal" data-target="#confirmationModal"><img position="@i" class="w-50" src="~/images/delete.png" /></a></td>
                                 </tr>
                             }
                         }
@@ -96,19 +96,22 @@
                             <div class="text-center">
                                 <strong><span>Apellido</span></strong>
                             </div>
-                            <input id="modalSurnameC" class="form-control text-center" type="text">
+                            <input id="modalCreateSurname" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Nombre</span></strong>
                             </div>
-                            <input id="modalNameC" class="form-control text-center" type="text">
+                            <input id="modalCreateName" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>DNI/CUIT/CUIL</span></strong>
                             </div>
-                            <input id="modalDniC" class="form-control text-center" type="text">
+                            <input id="modalCreateDni" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -116,19 +119,22 @@
                             <div class="text-center">
                                 <strong><span>Celular</span></strong>
                             </div>
-                            <input id="modalTelephoneC" class="form-control text-center" type="text">
+                            <input id="modalCreateTelephone" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Email</span></strong>
                             </div>
-                            <input id="modelEmailC" class="form-control text-center" type="text">
+                            <input id="modalCreateEmail" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>Telefono</span></strong>
                             </div>
-                            <input id="modalCellphoneC" class="form-control text-center" type="text">
+                            <input id="modalCreateCellphone" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                     </div>
                     <div class="text-center mt-5">
@@ -139,13 +145,15 @@
                             <div class="text-center">
                                 <strong><span>Localidad</span></strong>
                             </div>
-                            <input id="modelTownC" class="form-control text-center" type="text">
+                            <input id="modalCreateTown" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Direccion</span></strong>
                             </div>
-                            <input id="modelAddressC" class="form-control text-center" type="text">
+                            <input id="modalCreateAddress" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
@@ -164,19 +172,22 @@
                             <div class="text-center">
                                 <strong><span>Número</span></strong>
                             </div>
-                            <input id="modelNumberC" class="form-control text-center" type="text">
+                            <input id="modalCreateNumber" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Piso</span></strong>
                             </div>
-                            <input id="modelFloorC" class="form-control text-center" type="text">
+                            <input id="modalCreateFloor" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>Letra</span></strong>
                             </div>
-                            <input id="modelAppartmentC" class="form-control text-center" type="text">
+                            <input id="modalCreateAppartment" class="form-control text-center" type="text">
+                            <div class="validation_msg" id="msg_Nombre">dx</div>
                         </div>
                     </div>
                 </div>
@@ -309,32 +320,12 @@
             crossorigin="anonymous"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
-        var url = "@Url.Action("GetDataClient", "Backend")";
+        var urlGetOne = "@Url.Action("GetDataClient", "Backend")";
         var urlUpdate = "@Url.Action("UpdateClient", "Backend")";
         var urlDelete = "@Url.Action("DeleteClient", "Backend")";
         var urlCreate = "@Url.Action("CreateClient", "Backend")";
     </script>
     <script src="~/js/ButtonIDClick.js"></script>
-    <script>
-        /*$(document).ready(function () {
-$(".btn").click(function () {
-let Index = $(this).attr("id");
-$.ajax({
-method: "POST",
-url: url,
-data: { id: Index },
-success: function (DataJsonClient) {
-alert("Hola");
-//$('#modalClient').modal('show');
-},
-error: function () {
-alert("ERROR");
-}
-});
-});
-});*/
-    </script>
-
 </body>
 
 </html>

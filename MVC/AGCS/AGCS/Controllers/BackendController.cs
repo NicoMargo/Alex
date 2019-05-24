@@ -22,15 +22,15 @@ namespace AGCS.Controllers
         
         public ActionResult ABMClientes()
         {
-            BD.BringClients();
+            BD.GetClients(BD.idBusiness);
             ViewBag.Clients = BD.ListOfClients;
             return View();
         }
         
         [HttpPost]
-        public JsonResult GetDataClient(int id)
+        public JsonResult GetDataClient(int pos)
         {
-            BD.BringOneClient(BD.ListOfClients[id].Id);
+            BD.GetOneClient(BD.ListOfClients[pos].Id, BD.idBusiness);
             string JsonDataClient = JsonConvert.SerializeObject(BD.OneClient);
             return Json(JsonDataClient);            
         }
@@ -41,8 +41,7 @@ namespace AGCS.Controllers
             Client cUpdateClient = new Client(BD.OneClient.Id, Name, Surname,dni,email,Telephone,Cellphone, Town,Address,Province,Leter,Number,Floor);
             try
             {
-
-                
+                BD.UpdateClient(cUpdateClient);                
             }
             catch
             {
@@ -52,14 +51,13 @@ namespace AGCS.Controllers
             return Success;
         }
         [HttpPost]
-        public bool CreateClient(string Surname ="", string Name = "", int dni = 0, string email = "", int Telephone = 0, int Cellphone = 0, string Town = "", string Address = "", string Province = "", string Leter = "", int Number = 0, int Floor = 0)
+        public bool CreateClient(string Surname="" , string Name="" , int dni = 0, string email = "", int Telephone = 0, int Cellphone = 0, string Town = "", string Address = "", string Province = "", string Leter = "", int Number = 0, int Floor = 0)
         {
             bool Success = true;
             Client NewClient = new Client(Name, Surname, dni, email, Telephone, Cellphone, Town, Address, Province, Leter, Number, Floor);
             try
             {
-
-
+                BD.InsertClient(NewClient);
             }
             catch
             {
@@ -74,7 +72,7 @@ namespace AGCS.Controllers
             bool Success = true;
             try
             {
-
+                BD.DeleteClient(BD.ListOfClients[id].Id);
             }
             catch
             {

@@ -1,10 +1,10 @@
 ﻿$(document).ready(function () {
     $(".imageABM").click(function () {
-        let Index = $(this).attr("id");
+        let Index = $(this).attr("position");
         $.ajax({
             type: "POST",
-            url: url,
-            data: { id: Index },
+            url: urlGetOne,
+            data: { pos: Index },
             success: function (DataJsonClient) {
                 var Data = JSON.parse(DataJsonClient);
                 $("#modalSurname").val(Data.Surname);
@@ -31,18 +31,18 @@
             type: "POST",
             url: urlUpdate,
             data: {
-                Surname: $("#modalSurnameC").val(),
-                Name: $("#modalNameC").val(),
-                dni: $("#modalDniC").val(),
-                email: $("#modelEmailC").val(),
-                Telephone: $("#modalTelephoneC").val(),
-                Cellphone: $("#modalCellphoneC").val(),
-                Town: $("#modelTownC").val(),
-                Address: $("#modelAddressC").val(),
+                Surname: $("#modalSurname").val(),
+                Name: $("#modalName").val(),
+                dni: $("#modalDni").val(),
+                email: $("#modelEmail").val(),
+                Telephone: $("#modalTelephone").val(),
+                Cellphone: $("#modalCellphone").val(),
+                Town: $("#modelTown").val(),
+                Address: $("#modelAddress").val(),
                 Province: 1,
-                Leter: $("#modelAppartmentC").val(),
-                Number: $("#modelNumberC").val(),
-                Floor: $("#modelFloorC").val()
+                Leter: $("#modelAppartment").val(),
+                Number: $("#modelNumber").val(),
+                Floor: $("#modelFloor").val()
             },
             success: function () {
                 location.reload();
@@ -54,7 +54,7 @@
     });
 
     $(".w-50").click(function () {
-        let Index = $(this).attr("id");
+        let Index = $(this).attr("position");
          $("#confirm").click(function () {
             $.ajax({
                 type: "DELETE",
@@ -70,30 +70,37 @@
         });
     });
 
-        $("#newClient").click(function () {
+    $("#newClient").click(function () {
+        if ($("#modalCreateName").val() !== "" && $("#modalCreateName").val() !== "" && $("#modalCreateDni").val() !== 0) {
             $.ajax({
                 type: "POST",
                 url: urlCreate,
                 data: {
-                    Surname: $("#modalSurname").val(),
-                    Name: $("#modalName").val(),
-                    dni: $("#modalDni").val(),
-                    email: $("#modelEmail").val(),
-                    Telephone: $("#modalTelephone").val(),
-                    Cellphone: $("#modalCellphone").val(),
-                    Town: $("#modelTown").val(),
-                    Address: $("#modelAddress").val(),
+                    Surname: $("#modalCreateSurname").val(),
+                    Name: $("#modalCreateName").val(),
+                    dni: $("#modalCreateDni").val(),
+                    email: $("#modalCreateEmail").val(),
+                    Telephone: $("#modalCreateTelephone").val(),
+                    Cellphone: $("#modalCreateCellphone").val(),
+                    Town: $("#modalCreateTown").val(),
+                    Address: $("#modalCreateAddressC").val(),
                     Province: 1,
-                    Leter: $("#modelAppartment").val(),
-                    Number: $("#modelNumber").val(),
-                    Floor: $("#modelFloor").val()
+                    Leter: $("#modelCreateAppartment").val(),
+                    Number: $("#modelCreateNumber").val(),
+                    Floor: $("#modelCreateFloor").val()
                 },
                 success: function () {
                     location.reload();
                 },
                 error: function () {
                     alert("ERROR");
-                }            
-        });
+                }
+            });
+        }
+        else {
+            if ($("#modalCreateName").val() === "") {
+                $("#modalCreateName").addClass("validation_error");
+            }
+        }
     });
 });
