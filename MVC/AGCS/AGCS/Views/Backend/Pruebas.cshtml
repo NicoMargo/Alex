@@ -51,7 +51,44 @@
 </head>
 
 <body>
-           
+
+    @ViewBag.ClientInfo.Id;
+    <br />
+    @ViewBag.ClientInfo.Name;
+    <br />
+    @ViewBag.ClientInfo.Surname;
+    <br />
+    @ViewBag.ClientInfo.Dni;
+    <br />
+    @ViewBag.ClientInfo.Email;
+    <br />
+    @ViewBag.ClientInfo.Telephone;
+
+
+    <table id="myTable">
+        <tr class="header">
+            <th style="width:20%;">Apellido</th>
+            <th style="width:15%;">Nombre</th>
+            <th style="width:15%;">DNI/CUIT/CUIL</th>
+            <th style="width:10%;">Celular</th>
+            <th style="width:25%;">Email</th>
+            <th style="width:20%;">Modificar</th>
+        </tr>
+        @{
+            for (int i = 0; i < ViewBag.Clients.Count; i++)
+            {
+                <tr>
+                    <td>@ViewBag.Clients[i].Surname</td>
+                    <td>@ViewBag.Clients[i].Name</td>
+                    <td>@ViewBag.Clients[i].Dni</td>
+                    <td>@ViewBag.Clients[i].Cellphone</td>
+                    <td>@ViewBag.Clients[i].Email</td>
+                    <td><button type="button" name="buttonId" class="btn btn-primary" id="@i">Modificar</button></td>
+                </tr>
+            }
+
+        }
+    </table>
 </body>
 
 </html>

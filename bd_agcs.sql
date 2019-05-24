@@ -42,7 +42,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `spGetOneClient` (IN `id` INT, IN `i
 SELECT * FROM clients WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness$$
 
 DROP PROCEDURE IF EXISTS `spInsertClient`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsertClient` (IN `idBusiness` INT, IN `Name` VARCHAR(45), IN `Surname` VARCHAR(45), IN `DNI_CUIT` INT, IN `eMail` VARCHAR(45), IN `Telephone` INT, IN `Address` INT(250), IN `Locality` VARCHAR(45), IN `idProvince` INT, IN `idDelivery` INT, IN `Comments` VARCHAR(200))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsertClient` (IN `idBusiness` INT, IN `Name` VARCHAR(45), IN `Surname` VARCHAR(45), IN `DNI_CUIT` INT, IN `eMail` VARCHAR(45), IN `Telephone` INT, IN `Address` VARCHAR(250), IN `Locality` VARCHAR(45), IN `idProvince` INT, IN `idDelivery` INT, IN `Comments` VARCHAR(200))  NO SQL
 insert into clients(clients.Name,clients.Surname,clients.DNI_CUIT,clients.eMail,clients.Telephone,clients.Business_idBusiness) values(Name,Surname, DNI_CUIT, eMail, Telephone,idBusiness)$$
 
 DROP PROCEDURE IF EXISTS `spUpdateClient`$$

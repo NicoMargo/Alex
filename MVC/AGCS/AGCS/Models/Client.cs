@@ -37,7 +37,7 @@ namespace AGCS.Models
             _number = Number;
             _floor = Floor;
         }
-        public Client(int id, string Name, string Surname, int dni, string email, int Telephone, int Cellphone, string Town, string Address, string Province, string Leter, int Number, int Floor)
+        public Client(int id, string Name, string Surname, int dni, string email, int Telephone)
         {
             _id = id;
             _name = Name;
@@ -45,13 +45,6 @@ namespace AGCS.Models
             _dni = dni;
             _email = email;
             _phone = Telephone;
-            _cellphone = Cellphone;
-            _town = Town;
-            _Address = Address;
-            _province = Province;
-            _leter = Leter;
-            _number = Number;
-            _floor = Floor;
         }
         public int Id { get => _id; }
         public string Name { get => _name; }
