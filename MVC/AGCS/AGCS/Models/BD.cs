@@ -70,6 +70,7 @@ namespace AGCS.Models
             CommandConnection.CommandType = System.Data.CommandType.StoredProcedure;
             CommandConnection.CommandText = "spGetOneClient";
             CommandConnection.Parameters.AddWithValue("@id", idClient);
+            CommandConnection.Parameters.AddWithValue("@idBusiness", idBusiness);
             MySqlDataReader ConnectionReader = CommandConnection.ExecuteReader();
             if (ConnectionReader.Read())
             {

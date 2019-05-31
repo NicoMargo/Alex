@@ -12413,23 +12413,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\43994080\\.nuget\\packages\\": {},
+    "C:\\Users\\43572145\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\AProyecto\\Alex\\MVC\\AGCS\\AGCS\\AGCS.csproj",
+      "projectUniqueName": "Z:\\Alex\\MVC\\AGCS\\AGCS\\AGCS.csproj",
       "projectName": "AGCS",
-      "projectPath": "Z:\\AProyecto\\Alex\\MVC\\AGCS\\AGCS\\AGCS.csproj",
-      "packagesPath": "C:\\Users\\43994080\\.nuget\\packages\\",
-      "outputPath": "Z:\\AProyecto\\Alex\\MVC\\AGCS\\AGCS\\obj\\",
+      "projectPath": "Z:\\Alex\\MVC\\AGCS\\AGCS\\AGCS.csproj",
+      "packagesPath": "C:\\Users\\43572145\\.nuget\\packages\\",
+      "outputPath": "Z:\\Alex\\MVC\\AGCS\\AGCS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\43994080\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\43572145\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
