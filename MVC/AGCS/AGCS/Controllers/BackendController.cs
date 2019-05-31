@@ -22,37 +22,63 @@ namespace AGCS.Controllers
         
         public ActionResult ABMClientes()
         {
-            BD.BringClients();
+            BD.GetClients(BD.idBusiness);
             ViewBag.Clients = BD.ListOfClients;
             return View();
         }
         
         [HttpPost]
-        public JsonResult GetDataClient(int id)
+        public JsonResult GetDataClient(int pos)
         {
-            BD.BringOneClient(id);
+            BD.GetOneClient(BD.ListOfClients[pos].Id, BD.idBusiness);
             string JsonDataClient = JsonConvert.SerializeObject(BD.OneClient);
             return Json(JsonDataClient);            
         }
         [HttpPost]
         public bool UpdateClient(string Surname, string Name, int dni, string email, int Telephone, int Cellphone, string Town, string Address, string Province, string Leter, int Number, int Floor)
         {
-            bool Succes = true;
-            
+            bool Success = true;
             Client cUpdateClient = new Client(BD.OneClient.Id, Name, Surname,dni,email,Telephone,Cellphone, Town,Address,Province,Leter,Number,Floor);
             try
             {
-                                
+                BD.UpdateClient(cUpdateClient);                
             }
             catch
             {
-            }
-            finally
-            {
-                Succes = false;
+                Success = false;
             }
             
-            return Succes;
+            return Success;
+        }
+        [HttpPost]
+        public bool CreateClient(string Surname="" , string Name="" , int dni = 0, string email = "", int Telephone = 0, int Cellphone = 0, string Town = "", string Address = "", string Province = "", string Leter = "", int Number = 0, int Floor = 0)
+        {
+            bool Success = true;
+            Client NewClient = new Client(Name, Surname, dni, email, Telephone, Cellphone, Town, Address, Province, Leter, Number, Floor);
+            try
+            {
+                BD.InsertClient(NewClient);
+            }
+            catch
+            {
+                 Success = false;
+            }
+
+            return Success;
+        }
+        [HttpDelete]
+        public bool DeleteClient(int id)
+        {
+            bool Success = true;
+            try
+            {
+                BD.DeleteClient(BD.ListOfClients[id].Id);
+            }
+            catch
+            {
+                Success = false;
+            }
+            return Success;
         }
 
         // GET: Backend/Create
@@ -60,14 +86,6 @@ namespace AGCS.Controllers
         {
             return View();
         }
-        void UpdateClient(Client Updateclient)
-        {
-
-        }
-    
-
-      
-
         
     }
 }
