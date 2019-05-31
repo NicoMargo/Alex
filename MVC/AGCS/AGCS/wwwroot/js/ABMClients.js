@@ -1,4 +1,18 @@
-﻿$(document).ready(function () {
+﻿
+
+$(document).ready(function () {
+    function validate(id,specialCondition) {
+        if (specialCondition) {
+            $("#modal" + id).addClass("validation_error");
+            $("#msg" + id).removeClass("hidden");
+        }
+        else {
+            $("#modal" + id).removeClass("validation_error");
+            $("#msg" + id).addClass("hidden");
+        }
+        return specialCondition;
+    }
+
     $(".imageABM").click(function () {
         let Index = $(this).attr("position");
         $.ajax({
@@ -7,17 +21,17 @@
             data: { pos: Index },
             success: function (DataJsonClient) {
                 var Data = JSON.parse(DataJsonClient);
-                $("#modalSurname").val(Data.Surname);
-                $("#modalName").val(Data.Name);
-                $("#modalDni").val(Data.Dni);
-                $("#modelEmail").val(Data.Email);
-                $("#modalTelephone").val(Data.Telephone);
-                $("#modalCellphone").val(Data.Cellphone);
-                $("#modelTown").val(Data.Town);
-                $("#modelAddress").val(Data.Address);
-                $("#modelAppartment").val(Data.Leter);
-                $("#modelNumber").val(Data.Number);
-                $("#modelFloor").val(Data.Floor);
+                $("#modalUpdateSurname").val(Data.Surname);
+                $("#modalUpdateName").val(Data.Name);
+                $("#modalUpdateDni").val(Data.Dni);
+                $("#modelUpdateEmail").val(Data.Email);
+                $("#modalUpdateTelephone").val(Data.Telephone);
+                $("#modalUpdateCellphone").val(Data.Cellphone);
+                $("#modalUpdateTown").val(Data.Town);
+                $("#modalUpdateAddress").val(Data.Address);
+                $("#modalUpdateAppartment").val(Data.Leter);
+                $("#modalUpdateNumber").val(Data.Number);
+                $("#modalUpdateFloor").val(Data.Floor);
             },
             error: function () {
                 alert("ERROR");
@@ -26,24 +40,24 @@
     });
 
 
-    $("#Submit").click(function () {
+    $("#UpdateSubmit").click(function () {
         $.ajax({
             type: "POST",
             url: urlUpdate,
             data: {
-                Surname: $("#modalSurname").val(),
-                Name: $("#modalName").val(),
-                dni: $("#modalDni").val(),
-                email: $("#modelEmail").val(),
-                Telephone: $("#modalTelephone").val(),
-                Cellphone: $("#modalCellphone").val(),
-                Town: $("#modelTown").val(),
-                Address: $("#modelAddress").val(),
-                Province: 1,
-                Leter: $("#modelAppartment").val(),
-                Number: $("#modelNumber").val(),
-                Floor: $("#modelFloor").val()
-            },
+                Surname:   $("#modalUpdateSurname").val(),
+                Name:      $("#modalUpdateName").val(),
+                dni:       $("#modalUpdateDni").val(),
+                email:     $("#modelUpdateEmail").val(),
+                Telephone: $("#modalUpdateTelephone").val(),
+                Cellphone: $("#modalUpdateCellphone").val(),
+                Town:      $("#modelUpdateTown").val(),
+                Address:   $("#modalUpdateAddress").val(),
+                Province:  1,       
+                Leter:     $("#modalUpdateAppartment").val(),
+                Number:    $("#modalUpdateNumber").val(),
+                Floor:     $("#modalUpdateFloor").val()
+            },                      
             success: function () {
                 location.reload();
             },
@@ -53,7 +67,7 @@
         });
     });
 
-    $(".w-50").click(function () {
+    $("deleteButton").click(function () {
         let Index = $(this).attr("position");
          $("#confirm").click(function () {
             $.ajax({
@@ -71,7 +85,11 @@
     });
 
     $("#newClient").click(function () {
-        if ($("#modalCreateName").val() !== "" && $("#modalCreateName").val() !== "" && $("#modalCreateDni").val() !== 0) {
+        valid = validate("CreateSurname", $("#modalCreateSurname").val() !== "");
+        valid = valid && validate("CreateName", $("#modalCreateName").val() !== "");
+        valid = valid && validate("CreateDni", $("#modalCreateDni").val() !== "" && $("#modalCreateDni").val() != 0);
+
+        if (valid) {
             $.ajax({
                 type: "POST",
                 url: urlCreate,

@@ -15,7 +15,17 @@ namespace AGCS.Models
         public static Client OneClient;
         public static int idBusiness = 1;
 
+        private static string CheckNullString(MySqlDataReader ConnectionReader, string parameter) {
+            string result = "";
+            try { result = ConnectionReader[parameter].ToString(); } catch {}
+            return result;
 
+        }
+        private static int CheckNullInt(MySqlDataReader ConnectionReader, string parameter) {
+            int result = 0;
+            try { result = Convert.ToInt32(ConnectionReader["parameter"]); } catch { }
+            return result;
+        }
         //Funciones para la bd
         public static MySqlConnection Connect()
         {
@@ -49,15 +59,15 @@ namespace AGCS.Models
                 try
                 {
                     id = Convert.ToInt32(ConnectionReader["idClients"]);
-                    try { name = ConnectionReader["Name"].ToString(); } catch (Exception e) { name = ""; }
-                    try { surname = ConnectionReader["Surname"].ToString(); } catch (Exception e) { surname = ""; }
-                    try { dni = Convert.ToInt32(ConnectionReader["DNI_CUIT"]); } catch (Exception e) { dni = -1; }
-                    try { eMail = ConnectionReader["eMail"].ToString(); } catch (Exception e) { eMail = ""; }
-                    try { telephone = Convert.ToInt32(ConnectionReader["Telephone"]); } catch (Exception e) { telephone = -1; }
+                    name = CheckNullString(ConnectionReader,"Name"); 
+                    surname = CheckNullString(ConnectionReader,"Surname");
+                    dni = CheckNullInt(ConnectionReader,"DNI_CUIT"); 
+                    eMail = CheckNullString(ConnectionReader,"eMail");
+                    telephone = CheckNullInt(ConnectionReader,"Telephone");
                     Client client = new Client(id, name, surname, dni, eMail, telephone);
                     ListOfClients.Add(client);
                 }
-                catch (Exception e) { }
+                catch { }
             }
             Disconect(Connection);
         }
@@ -74,14 +84,18 @@ namespace AGCS.Models
             MySqlDataReader ConnectionReader = CommandConnection.ExecuteReader();
             if (ConnectionReader.Read())
             {
-                client = new Client(
-                Convert.ToInt32(ConnectionReader["idClients"]),
-                ConnectionReader["Name"].ToString(),
-                ConnectionReader["Surname"].ToString(),
-                Convert.ToInt32(ConnectionReader["DNI_CUIT"]),
-                ConnectionReader["eMail"].ToString(),
-                Convert.ToInt32(ConnectionReader["Telephone"]));
+                string name, surname, email;
+                int id, dni, telephone;
+                try { } catch { }
                 /*Addres info ...*/
+                id = Convert.ToInt32(ConnectionReader["idClients"]);
+                name = CheckNullString(ConnectionReader, "Name");
+                surname = CheckNullString(ConnectionReader, "Surname");
+                dni = CheckNullInt(ConnectionReader, "DNI_CUIT");
+                email = CheckNullString(ConnectionReader, "eMail");
+                telephone = CheckNullInt(ConnectionReader, "Telephone");
+                client = new Client(id, name, surname, dni, email, telephone);
+                ListOfClients.Add(client);
             }
             else { client = null; }
             Disconect(Connection);

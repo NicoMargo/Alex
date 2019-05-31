@@ -5,7 +5,10 @@
 .validation_msg {
     color : red;
 }
+.hidden {
+    visibility : hidden;
+}
 
-..validation_error {
+.validation_error {
     border-color: red;
 }
