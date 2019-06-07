@@ -1,0 +1,6 @@
+# Don't track content of these folders
+MVC/AGCS/.vs/AGCS
+
+
+*.ide-shm
+*-ide-wal
