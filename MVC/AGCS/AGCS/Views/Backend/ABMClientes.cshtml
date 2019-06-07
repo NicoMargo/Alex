@@ -13,55 +13,56 @@
     <link rel="stylesheet" href="~/css/Table.css">
     <link rel="stylesheet" href="~/css/MySiteCSS.css">
     <title>AGCS</title>
-    
 
+    <!--
+        Persona --- nombre apellido email id
+            Usuario --- Cod Admin
+            PersonaFiscal --- Dni/Cuit - Telefono - bla
+                Cliente - piso letra
+                Proveedor - address-->
 </head>
 
-<body>
+    <body>
 
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            <div class="card">
-                <div class="card-header">
-                    <strong class="card-title">Clientes</strong>
-                </div>
-                <div class="card-body">
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Cliente">
-                    <button type="button" id="createClient" class="btn btn-primary w-100" data-toggle="modal" data-target=".bd-example-modal-xl">
-                        Agregar Cliente
-                    </button>
-
-                    <table id="myTable">
-                        <tr class="header">
-                            <th style="width:20%;">Apellido</th>
-                            <th style="width:15%;">Nombre</th>
-                            <th style="width:15%;">DNI/CUIT/CUIL</th>
-                            <th style="width:10%;">Celular</th>
-                            <th style="width:25%;">Email</th>
-                            <th style="width:10%;"></th>
-                            <th style="width:10%;"></th>
-                        </tr>
-                        @{
-                            for (int i = 0; i < ViewBag.Clients.Count; i++)
-                            {
-                                <tr>
-                                    <td>@ViewBag.Clients[i].Surname</td>
-                                    <td>@ViewBag.Clients[i].Name</td>
-                                    <td>@ViewBag.Clients[i].Dni</td>
-                                    <td>@ViewBag.Clients[i].Cellphone</td>
-                                    <td>@ViewBag.Clients[i].Email</td>
-                                    <td><a data-toggle="modal" data-target="#updateClient"><img position="@i" class="imageABM" src="~/images/edit.png" /></a></td>
-                                    <td><a data-toggle="modal" data-target="#confirmationModal"><img position="@i" class="w-50" src="~/images/delete.png" /></a></td>
-                                </tr>
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Clientes</strong>
+                    </div>
+                    <div class="card-body content">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Cliente">
+                        <button type="button" id="createClient" class="btn btn-primary w-100" data-toggle="modal" data-target=".bd-example-modal-xl">
+                            Agregar Cliente
+                        </button>
+                        <table id="myTable" class="content">
+                            <tr class="header content">
+                                <th style="width:20%;">Apellido</th>
+                                <th style="width:15%;">Nombre</th>
+                                <th style="width:15%;">DNI/CUIT/CUIL</th>
+                                <th style="width:10%;">Celular</th>
+                                <th style="width:25%;">Email</th>
+                                <th style="width:10%;"></th>
+                                <th style="width:10%;"></th>
+                            </tr>
+                            @{
+                                for (int i = 0; i < ViewBag.Clients.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@ViewBag.Clients[i].Surname</td>
+                                        <td>@ViewBag.Clients[i].Name</td>
+                                        <td>@ViewBag.Clients[i].Dni</td>
+                                        <td>@ViewBag.Clients[i].Cellphone</td>
+                                        <td>@ViewBag.Clients[i].Email</td>
+                                        <td><a data-toggle="modal" data-target="#updateClient"><img position="@i" class="imageABM" src="~/images/edit.png" /></a></td>
+                                        <td><a data-toggle="modal" data-target="#confirmationModal"><img position="@i" class="w-50" src="~/images/delete.png" /></a></td>
+                                    </tr>
+                                }
                             }
-                        }
-                    </table>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+ 
 
-    <!-- Modal -->
+        <!-- Modal -->
     <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -326,6 +327,6 @@
         var urlCreate = "@Url.Action("CreateClient", "Backend")";
     </script>
     <script src="~/js/ButtonIDClick.js"></script>
-</body>
+    </body>
 
 </html>

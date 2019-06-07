@@ -6,6 +6,6 @@
     color : red;
 }
 
-..validation_error {
+.validation_error {
     border-color: red;
 }
