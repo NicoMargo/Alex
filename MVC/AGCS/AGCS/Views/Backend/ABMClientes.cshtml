@@ -97,44 +97,44 @@
                                 <strong><span>Apellido</span></strong>
                             </div>
                             <input id="modalCreateSurname" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateSurname">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgCreateSurname">Ingrese un apellido válido</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Nombre</span></strong>
                             </div>
                             <input id="modalCreateName" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateNombre">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgCreateName">Ingrese un nombre válido</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>DNI/CUIT/CUIL</span></strong>
                             </div>
-                            <input id="modalCreateDni" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msg_CreatDni">dx</div>
+                            <input id="modalCreateDni" class="form-control text-center" type="number"  min="0">
+                            <div class="validation_msg hidden text-center" id="msgCreateDni">Ingrese un  válido</div>
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
-                                <strong><span>Celular</span></strong>
+                                <strong><span>Nro. Teléfono</span></strong>
                             </div>
-                            <input id="modalCreateTelephone" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateTelephone">dx</div>
+                            <input id="modalCreateCellphone" class="form-control text-center" type="number"  min="0">
+                            <div class="validation_msg hidden text-center" id="msgCreateNombre">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
+                            <div class="text-center">
+                                <strong><span>Nro. Celular</span></strong>
+                            </div>
+                            <input id="modalCreateTelephone" class="form-control text-center" type="number"  min="0">
+                            <div class="validation_msg hidden text-center" id="msgCreateTelephone">Ingrese un  válido</div>
+                        </div>
+                        <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>Email</span></strong>
                             </div>
                             <input id="modalCreateEmail" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateEmail">dx</div>
-                        </div>
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Telefono</span></strong>
-                            </div>
-                            <input id="modalCreateCellphone" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateNombre">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgCreateEmail">Ingrese un  válido</div>
                         </div>
                     </div>
                     <div class="text-center mt-5">
@@ -146,14 +146,14 @@
                                 <strong><span>Localidad</span></strong>
                             </div>
                             <input id="modalCreateTown" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateTown">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgCreateTown">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Direccion</span></strong>
                             </div>
                             <input id="modalCreateAddress" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateAddress">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgCreateAddress">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
@@ -172,28 +172,28 @@
                             <div class="text-center">
                                 <strong><span>Número</span></strong>
                             </div>
-                            <input id="modalCreateNumber" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateNumber">dx</div>
+                            <input id="modalCreateNumber" class="form-control text-center" type="number">
+                            <div class="validation_msg hidden text-center" id="msgCreateNumber">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Piso</span></strong>
                             </div>
-                            <input id="modalCreateFloor" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateFloor">dx</div>
+                            <input id="modalCreateFloor" class="form-control text-center" type="number" min="0">
+                            <div class="validation_msg hidden text-center" id="msgCreateFloor">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>Letra</span></strong>
                             </div>
                             <input id="modalCreateAppartment" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgCreateAppartment">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgCreateAppartment">Ingrese un  válido</div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-dismiss="modal">Cerrar</button>
-                    <button class="btn btn-primary" id="newClient" data-dismiss="modal">Crear</button>
+                    <button class="btn btn-primary" id="newClient">Crear</button>
                 </div>
 
             </div>
@@ -219,44 +219,44 @@
                                 <strong><span>Apellido</span></strong>
                             </div>
                             <input id="modalUpdateSurname" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateSurname">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgUpdateSurname">Ingrese un apellido válido</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Nombre</span></strong>
                             </div>
                             <input id="modalUpdateName" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateName">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgUpdateName">Ingrese un nombre válido</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>DNI/CUIT/CUIL</span></strong>
                             </div>
-                            <input id="modalUpdateDni" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateDni">dx</div>
+                            <input id="modalUpdateDni" class="form-control text-center" type="number" min="0">
+                            <div class="validation_msg hidden text-center" id="msgUpdateDni">Ingrese un DNI o CUIT válido</div>
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
-                                <strong><span>Telefono</span></strong>
+                                <strong><span>Nro. Telefono</span></strong>
                             </div>
-                            <input id="modalUpdateTelephone" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateTelephone">dx</div>
+                            <input id="modalUpdateTelephone" class="form-control text-center" type="number"  min="0">
+                            <div class="validation_msg hidden text-center" id="msgUpdateTelephone">Ingrese un teléfono válido</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
+                            <div class="text-center">
+                                <strong><span>Nro. Celular</span></strong>
+                            </div>
+                            <input id="modalUpdateCellphone" class="form-control text-center" type="number"  min="0">
+                            <div class="validation_msg hidden text-center" id="msgUpdateCellphone">Ingrese un  válido</div>
+                        </div>
+                        <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>Email</span></strong>
                             </div>
                             <input id="modalUpdateEmail" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateEmail">dx</div>
-                        </div>
-                        <div class="offset-md-1 col-md-2">
-                            <div class="text-center">
-                                <strong><span>Nro. Celular</span></strong>
-                            </div>
-                            <input id="modalUpdateCellphone" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateCellphone">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgUpdateEmail">Ingrese un mail válido</div>
                         </div>
                     </div>
                     <div class="text-center mt-5">
@@ -268,14 +268,14 @@
                                 <strong><span>Localidad</span></strong>
                             </div>
                             <input id="modalUpdateTown" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateTown">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgUpdateTown">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Direccion</span></strong>
                             </div>
                             <input id="modalUpdateAddress" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateAddress">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgUpdateAddress">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
@@ -295,21 +295,21 @@
                                 <strong><span>Número</span></strong>
                             </div>
                             <input id="modalUpdateNumber" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateNumber">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgUpdateNumber">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-3">
                             <div class="text-center">
                                 <strong><span>Piso</span></strong>
                             </div>
-                            <input id="modalUpdateFloor" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateFloor">dx</div>
+                            <input id="modalUpdateFloor" class="form-control text-center" type="number" min="0">
+                            <div class="validation_msg hidden text-center" id="msgUpdateFloor">Ingrese un  válido</div>
                         </div>
                         <div class="offset-md-1 col-md-2">
                             <div class="text-center">
                                 <strong><span>Letra</span></strong>
                             </div>
                             <input id="modalUpdateAppartment" class="form-control text-center" type="text">
-                            <div class="validation_msg hidden" id="msgUpdateAppartment">dx</div>
+                            <div class="validation_msg hidden text-center" id="msgUpdateAppartment">Ingrese un  válido</div>
                         </div>
                     </div>
                 </div>

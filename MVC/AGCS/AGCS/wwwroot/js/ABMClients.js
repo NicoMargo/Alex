@@ -1,8 +1,8 @@
 ﻿
 
 $(document).ready(function () {
-    function validate(id,specialCondition) {
-        if (specialCondition) {
+    function validate(id,expectedCondition = true) {
+        if (!expectedCondition) {
             $("#modal" + id).addClass("validation_error");
             $("#msg" + id).removeClass("hidden");
         }
@@ -10,7 +10,7 @@ $(document).ready(function () {
             $("#modal" + id).removeClass("validation_error");
             $("#msg" + id).addClass("hidden");
         }
-        return specialCondition;
+        return expectedCondition;
     }
 
     $(".imageABM").click(function () {
@@ -86,8 +86,8 @@ $(document).ready(function () {
 
     $("#newClient").click(function () {
         valid = validate("CreateSurname", $("#modalCreateSurname").val() !== "");
-        valid = valid && validate("CreateName", $("#modalCreateName").val() !== "");
-        valid = valid && validate("CreateDni", $("#modalCreateDni").val() !== "" && $("#modalCreateDni").val() != 0);
+        valid = validate("CreateName", $("#modalCreateName").val() !== "") && valid;
+        valid = validate("CreateDni", $("#modalCreateDni").val() !== "" && $("#modalCreateDni").val() != 0) && valid;
 
         if (valid) {
             $.ajax({
@@ -109,6 +109,7 @@ $(document).ready(function () {
                 },
                 success: function () {
                     location.reload();
+                    $("#createClient").modal("toggle");
                 },
                 error: function () {
                     alert("ERROR");

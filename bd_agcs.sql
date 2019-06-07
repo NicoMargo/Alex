@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 31-05-2019 a las 15:11:15
+-- Tiempo de generación: 07-06-2019 a las 15:02:43
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -26,55 +26,84 @@ DELIMITER $$
 --
 -- Procedimientos
 --
-DROP PROCEDURE IF EXISTS `spDeleteClient`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteClient` (IN `id` INT, IN `idBusiness` INT)  NO SQL
-if(EXISTS(SELECT clients.idClients FROM clients WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness))
+DROP PROCEDURE IF EXISTS `spClientDelete`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spClientDelete` (IN `id` INT, IN `pIdBusiness` INT)  NO SQL
+if(EXISTS(SELECT clients.idClients FROM clients WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness))
 THEN
-	DELETE from clients WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness;
+	DELETE from clients WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness;
 end IF$$
 
-DROP PROCEDURE IF EXISTS `spGetClients`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spGetClients` (IN `idBusiness` INT)  NO SQL
-SELECT clients.idClients, clients.Name, clients.Surname, clients.DNI_CUIT, clients.eMail, clients.Telephone FROM clients where clients.Business_idBusiness = idBusiness$$
+DROP PROCEDURE IF EXISTS `spClientGetOne`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spClientGetOne` (IN `id` INT, IN `pIdBusiness` INT)  NO SQL
+SELECT * FROM clients WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness$$
 
-DROP PROCEDURE IF EXISTS `spGetOneClient`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spGetOneClient` (IN `id` INT, IN `idBusiness` INT)  NO SQL
-SELECT * FROM clients WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness$$
+DROP PROCEDURE IF EXISTS `spClientInsert`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spClientInsert` (IN `pIdBusiness` INT, IN `pName` VARCHAR(45), IN `pSurname` VARCHAR(45), IN `pDNI_CUIT` INT, IN `pEmail` VARCHAR(45), IN `pTelephone` INT, IN `pCellphone` INT)  NO SQL
+if( pIdBusiness > -1 && pName != "" && pSurname != "" && pDNI_CUIT != 0 )
+then
+	insert into clients(clients.Name,clients.Surname,clients.DNI_CUIT,clients.Business_idBusiness) values( pName, pSurname, pDNI_CUIT, pIdBusiness);
+	
+    set @lastId = (select clients.idClients from clients where clients.idClients = LAST_INSERT_ID() and clients.Name = pName and clients.Surname = pSurname and clients.DNI_CUIT = pDNI_CUIT and clients.Business_idBusiness = pIdBusiness);
+	
+    if(@lastId is not null)
+    then
+    
+		if( pEmail is not null and pEmail != (SELECT clients.eMail from clients where clients.idClients = @lastId)) 
+		THEN
+			UPDATE clients set clients.eMail = pEmail WHERE clients.idClients = @lastId and clients.Business_idBusiness = pIdBusiness; 
+		end if;
+		
+		if( pTelephone is not null and pTelephone != (SELECT clients.Telephone from clients where clients.idClients = @lastId)) 
+		THEN
+			UPDATE clients set clients.Telephone = pTelephone WHERE clients.idClients = @lastId and clients.Business_idBusiness = pIdBusiness; 
+		end if;
+		
+		if( pCellphone is not null and pCellphone != (SELECT clients.Cellphone from clients where clients.idClients = @lastId)) 
+		THEN
+			UPDATE clients set clients.Cellphone = pCellphone WHERE clients.idClients = @lastId and clients.Business_idBusiness = pIdBusiness; 
+		end if;
+    
+    end if;
+end if$$
 
-DROP PROCEDURE IF EXISTS `spInsertClient`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsertClient` (IN `idBusiness` INT, IN `Name` VARCHAR(45), IN `Surname` VARCHAR(45), IN `DNI_CUIT` INT, IN `eMail` VARCHAR(45), IN `Telephone` INT, IN `Address` VARCHAR(250), IN `Locality` VARCHAR(45), IN `idProvince` INT, IN `idDelivery` INT, IN `Comments` VARCHAR(200))  NO SQL
-insert into clients(clients.Name,clients.Surname,clients.DNI_CUIT,clients.eMail,clients.Telephone,clients.Business_idBusiness) values(Name,Surname, DNI_CUIT, eMail, Telephone,idBusiness)$$
+DROP PROCEDURE IF EXISTS `spClientsGet`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spClientsGet` (IN `pIdBusiness` INT)  NO SQL
+SELECT clients.idClients, clients.Name, clients.Surname, clients.DNI_CUIT, clients.eMail, clients.Telephone, clients.Cellphone FROM clients where clients.Business_idBusiness = pIdBusiness$$
 
-DROP PROCEDURE IF EXISTS `spUpdateClient`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spUpdateClient` (IN `id` INT, IN `idBusiness` INT, IN `Name` VARCHAR(45), IN `Surname` VARCHAR(45), IN `DNI_Cuit` INT(20), IN `eMail` VARCHAR(45), IN `Telephone` INT)  NO SQL
-if(EXISTS(SELECT clients.idClients from clients WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness))
+DROP PROCEDURE IF EXISTS `spClientUpdate`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spClientUpdate` (IN `id` INT, IN `pIdBusiness` INT, IN `pName` VARCHAR(45), IN `pSurname` VARCHAR(45), IN `pDNI_Cuit` INT(20), IN `pEmail` VARCHAR(45), IN `pTelephone` INT, IN `pCellphone` INT)  NO SQL
+if(EXISTS(SELECT clients.idClients from clients WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness))
 THEN
 	
-	if(Name is not null and Name != (SELECT clients.Name from clients where clients.idClients = id) ) 
+	if( pName is not null and pName!= (SELECT clients.Name from clients where clients.idClients = id) ) 
     THEN
-    	UPDATE clients set Name = Name WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness ; 
+    	UPDATE clients set Name = pName WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness; 
     end if;
     
-	if(Surname is not null and Surname != (SELECT clients.Surname from clients where clients.idClients = id)) 
+	if( pSurname is not null and pSurname != (SELECT clients.Surname from clients where clients.idClients = id)) 
     THEN
-    	UPDATE clients set clients.Surname = Surname WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness; 
+    	UPDATE clients set clients.Surname = pSurname WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness; 
     end if;
     
-    if(DNI_CUIT is not null and DNI_CUIT != (SELECT clients.DNI_CUIT from clients where clients.idClients = id)) 
+    if( pDNI_CUIT is not null and pDNI_CUIT != (SELECT clients.DNI_CUIT from clients where clients.idClients = id)) 
     THEN
-    	UPDATE clients set clients.DNI_CUIT = DNI_CUIT WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness; 
+    	UPDATE clients set clients.DNI_CUIT = pDNI_CUIT WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness; 
     end if;
     
-    if(eMail is not null and eMail != (SELECT clients.eMail from clients where clients.idClients = id)) 
+    if( pEmail is not null and pEmail != (SELECT clients.eMail from clients where clients.idClients = id)) 
     THEN
-    	UPDATE clients set clients.eMail = eMail WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness; 
+    	UPDATE clients set clients.eMail = pEmail WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness; 
     end if;
     
-    if(Telephone is not null and Telephone != (SELECT clients.Telephone from clients where clients.idClients = id)) 
+    if( pTelephone is not null and pTelephone != (SELECT clients.Telephone from clients where clients.idClients = id)) 
     THEN
-    	UPDATE clients set clients.Telephone = Telephone WHERE clients.idClients = id and clients.Business_idBusiness = idBusiness; 
+    	UPDATE clients set clients.Telephone = pTelephone WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness; 
     end if;
     
+	if( pCellphone is not null and pCellphone != (SELECT clients.Cellphone from clients where clients.idClients = id)) 
+    THEN
+    	UPDATE clients set clients.Cellphone = pCellphone WHERE clients.idClients = id and clients.Business_idBusiness = pIdBusiness; 
+    end if;
 
 end if$$
 
@@ -174,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `Business_idBusiness` int(11) NOT NULL,
   PRIMARY KEY (`idClients`,`Business_idBusiness`),
   KEY `fk_Clients_Business1_idx` (`Business_idBusiness`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `clients`
@@ -184,7 +213,10 @@ INSERT INTO `clients` (`idClients`, `Name`, `Surname`, `DNI_CUIT`, `eMail`, `Tel
 (5, 'Carlitos', 'perez', 0, 'carlomagno@gmail.cim', 0, 0, 1),
 (6, 'Don Juan', 'Equisde', 44444555, 'juan@mail.cim', 45678912, 0, 1),
 (7, 'Robot de', 'Prueba', 17, 'c17@patrullaroja.com', NULL, 0, 1),
-(8, 'Yare Yare', 'Dawa', 0, 'bot01@mail.com', 0, 0, 1);
+(8, 'Yare Yare', 'Dawa', 0, 'bot01@mail.com', 0, 0, 1),
+(11, 'aaaaaa', 'aaaaa', 0, 'sdafdfdfadsf@adsf', 0, 0, 1),
+(13, 'a', 'a', 5, '', 1, 0, 1),
+(14, 'a', 'b', 1, 'xd', 1, 0, 1);
 
 -- --------------------------------------------------------
 
